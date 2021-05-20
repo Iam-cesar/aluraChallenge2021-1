@@ -1,0 +1,31 @@
+.nav__perfil-usuario{
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  height: 100%;
+  padding: 0 .5rem;
+  text-decoration: none;
+}
+
+.nav__perfil-usuario:hover{
+  background-color: var(--inner-input-color);
+}
+
+.nav__perfil-img-container{
+  --perfil-image-size: 2rem;
+  height: var(--perfil-image-size);
+  width: var(--perfil-image-size);
+}
+
+.nav__perfil-img{
+  height: var(--perfil-image-size);
+  width: var(--perfil-image-size);
+  border-radius: 50%;
+}
+
+.nav__nome-usuario-container{
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  color: var(--text-color-white);
+}

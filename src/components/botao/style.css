@@ -1,0 +1,32 @@
+.menu__botao-container{
+  --menu__botao-size: 3rem;
+  --opacity: 56%;
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  opacity: var(--opacity);
+}
+
+.menu__botao-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--menu__botao-size);
+  height: var(--menu__botao-size); 
+  background-color: var(--botao-color);
+  border-radius: 16px;
+  margin-right: 1rem;
+}
+
+.menu__botao-texto{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--text-color-white);
+  font-size: 1.3rem;
+}
+
+.menu__botao-container:focus{
+  opacity: 100%;
+}

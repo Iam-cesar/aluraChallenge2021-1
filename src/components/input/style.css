@@ -1,0 +1,14 @@
+.nav__search{
+  height: 90%;
+  width: 100%;
+  padding-left: 1rem;
+  border-radius: 8px;
+  border: 0 solid;
+  font-size: 1rem;
+  background-color: var(--inner-input-color);
+  color: var(--text-color-white);
+}
+
+.nav__search:focus{
+  outline: 0;
+}
