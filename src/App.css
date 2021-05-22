@@ -1,11 +1,23 @@
 :root{
   --bg-primary-color: #051D3B;
-  --inner-input-color: #FFFFFF29;
+  --bg-editor: #141414;
+  --border-color-editor: #6BD1FF;
+  --inner-input-color: #ffffff29;
   --text-color-white: #ffffff;
+  --text-color-black: #000000;
   --botao-color: #5081FB;
+  --border-radius: 8px;
+  --dot-color-red: #FF5F56;
+  --dot-color-yellow: #FFBD2E;
+  --dot-color-green: #27C93F;
 }
 
-html,
-body{
+html{
   background-color: var(--bg-primary-color);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.app__wrapper{
+  width: 20%;
 }

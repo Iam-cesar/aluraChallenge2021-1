@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Menu = (props) => {
-  return(
-    <div className="menu__container">
-      {props.children}
+const Menu = ({children, className}) => {
+
+  return (
+    <div className={className}>
+      {children}
     </div>
   );
 };

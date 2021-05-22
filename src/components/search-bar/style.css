@@ -1,5 +1,21 @@
 .nav__search-container{
   height: 100%;
-  width: 48%;
+  width: 54%;
   outline: none;
+  box-sizing: border-box;
+}
+
+.nav__search{
+  height: 100%;
+  width: 98%;
+  padding-left: 1rem;
+  border-radius: var(--border-radius);
+  border: 0 solid;
+  font-size: 1rem;
+  background-color: var(--inner-input-color);
+  color: var(--text-color-white);
+}
+
+.nav__search:focus{
+  outline: 0;
 }

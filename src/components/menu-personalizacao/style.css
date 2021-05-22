@@ -1,0 +1,23 @@
+.menu-personalizacao__container{
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+}
+
+.menu-personalizacao__options{ 
+  height: 50%;
+  width: 104%;
+  padding-left: 1rem;
+  border-radius: var(--border-radius);
+  border: 0 solid;
+  font-size: 1.1rem;
+  background: var(--inner-input-color);
+  color: var(--text-color-white);
+  margin-bottom: 1rem;
+  -moz-appearance: none;
+}
+
+.menu-personalizacao__option{
+  color: var(--text-color-black);
+  background: #051D3B99;
+}

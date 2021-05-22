@@ -1,0 +1,46 @@
+.menu-projeto__container{
+  width: 100%;
+  height: 50%;
+}
+
+.menu-principal__container-input{ 
+  height: 3.5rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.menu-principal__input,
+.menu-principal__descricao{
+  height: 100%;
+  width: 98%;
+  padding-left: 1rem;
+  border-radius: var(--border-radius);
+  border: 0 solid;
+  font-size: 1rem;
+  background-color: var(--inner-input-color);
+  color: var(--text-color-white);
+  margin-bottom: 1rem;
+}
+
+.menu-principal__input:focus{
+  outline: 0;
+}
+
+.menu-principal__descricao{
+  resize: none;
+  padding: 1rem 0 1rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.menu-principal__descricao::-webkit-scrollbar {
+  width: 10px;
+}
+
+.menu-principal__descricao::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px transparent; 
+}
+
+.menu-principal__descricao:focus{
+  outline: none;
+}
