@@ -1,5 +1,4 @@
 .text-editor__container{
-  width: 50%;
   height: 22.88rem;
   border-radius: var(--border-radius);
   background-color: var(--border-color-editor);

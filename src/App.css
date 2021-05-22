@@ -10,6 +10,8 @@
   --dot-color-red: #FF5F56;
   --dot-color-yellow: #FFBD2E;
   --dot-color-green: #27C93F;
+  --color-button-highlight: rgba(80, 129, 251, 0.08);
+  --color-save-button: #5081FB;
 }
 
 html{
@@ -18,6 +20,10 @@ html{
   margin: 0 auto;
 }
 
-.app__wrapper{
+.side__wrapper{
   width: 20%;
+}
+
+.main__wrapper{
+  width: 54%;
 }

@@ -1,13 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const Button = ({imgBotao, textoBotao}) => {
+const Button = ({children, className}) => {
   return (
-    <button className="menu__botao-container">
-      <div className="menu__botao-img">{imgBotao}</div>
-      <div className="menu__botao-texto">
-        <span>{textoBotao}</span>
-      </div>
+    <button className={className}>
+      {children}
     </button>
   );
 };
