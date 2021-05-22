@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
+import Input from '../input';
 
-const SearchBar = (props) => { 
+const SearchBar = () => { 
   return(
     <div className="nav__search-container">
-      {props.children}
+      <Input className="nav__search" typeSubmit='text' placeholder='Busque por algo' />
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
 
-const Input = (props) => {
+const Input = ({typeSubmit, className, placeholder}) => {
   return(
-    <input type={props.typeSubmit} className={props.className} placeholder={props.placeholder} />
+    <input type={typeSubmit} className={className} placeholder={placeholder} />
   );
 };
 

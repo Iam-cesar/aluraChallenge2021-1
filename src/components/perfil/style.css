@@ -1,7 +1,15 @@
+.width{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav__perfil-usuario{
   display: flex;
   align-items: center;
-  border-radius: 8px;
+  justify-content: center;
+  border-radius: var(--border-radius);
   height: 100%;
   padding: 0 .5rem;
   text-decoration: none;
@@ -26,6 +34,6 @@
 .nav__nome-usuario-container{
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: var(--border-radius);
   color: var(--text-color-white);
 }

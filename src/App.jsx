@@ -3,20 +3,17 @@ import './App.css';
 
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
-import {ReactComponent as ImgCodeOff} from './assets/img/codeoff.svg';
-import {ReactComponent as ImgUsers} from './assets/img/users.svg';
-
 
 // Component imports
 import Logo from './components/logo';
 import Navbar from './components/navbar';
 import Perfil from './components/perfil';
 import SeachBar from './components/search-bar';
-import Input from './components/input';
 import Main from './components/main';
-import Menu from './components/menu';
-import Botao from './components/botao';
-import Paragraph from './components/paragraph';
+import TextEditor from './components/text-editor';
+import MenuProjeto from './components/menu-projeto';
+import MenuPrincipal from './components/menu-principal';
+import MenuPersonalizacao from './components/menu-personalizacao';
 
 function App() {
   const [nomeUsuario] = useState('Cesar Augusto');
@@ -25,18 +22,19 @@ function App() {
     <>
       <Navbar>
         <Logo />
-        <SeachBar >
-          <Input className="nav__search" typeSubmit='text' placeholder='Busque por algo' />
-        </SeachBar>
+        <SeachBar />
         <Perfil nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
       </Navbar>
 
       <Main>
-        <Menu>
-          <Paragraph text="MENU" />
-          <Botao textoBotao='Editor de código' imgBotao={<ImgCodeOff/>} />
-          <Botao textoBotao='Comunidade' imgBotao={<ImgUsers/>} />
-        </Menu>
+        <div className='app__wrapper'>
+          <MenuPrincipal />
+        </div>
+        <TextEditor />
+        <div className='app__wrapper'>
+          <MenuProjeto />
+          <MenuPersonalizacao />
+        </div>
       </Main>
     </>
   );

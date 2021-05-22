@@ -1,7 +1,4 @@
 .menu__container{
-  position: absolute;
-  width: 20%;
-  /* height: 9.1rem; */
-  left: 2rem;
-  top: 8rem;
+  position: flex;
+  width: 100%;
 }

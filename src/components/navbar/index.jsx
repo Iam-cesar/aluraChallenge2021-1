@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Navbar = (props) => {
+const Navbar = ({children}) => {
   return (
     <section>
       <nav className="nav">
-        {props.children}
+        {children}
       </nav>
     </section>
   );
