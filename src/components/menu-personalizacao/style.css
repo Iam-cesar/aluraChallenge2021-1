@@ -1,11 +1,14 @@
 .menu-personalizacao__container{
   width: 100%;
-  height: 30%;
+  height: 60%;
   box-sizing: border-box;
 }
 
-.menu-personalizacao__options{ 
-  height: 50%;
+.menu-personalizacao__options,
+.menu-personalizacao__colors,
+.menu-personalizacao__color-picker-container,
+.menu-personalizacao__botao-salvar{ 
+  height: 15%;
   width: 104%;
   padding-left: 1rem;
   border-radius: var(--border-radius);
@@ -17,7 +20,39 @@
   -moz-appearance: none;
 }
 
-.menu-personalizacao__option{
+.menu-personalizacao__option,
+.menu-personalizacao__color{
   color: var(--text-color-black);
-  background: #051D3B99;
+  /* background: #051D3B99; */
+}
+
+.menu-personalizacao__color-picker-container{
+  background-color: var(--bg-primary-color);
+  border: 1px solid white;
+  padding: 0px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-personalizacao__color-picker{
+  width: 98%;
+  height: 86%;
+  border: 0px;
+  outline: none;
+  padding: 0px;
+  background-color: var(--bg-primary-color);
+  border-radius: var(--border-radius);
+}
+
+.menu-personalizacao__botao-salvar{
+  background-color: var(--color-save-button);
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
+.menu-personalizacao__botao-salvar:hover{
+  filter: brightness(100%);
+  transition: ease-in-out 200ms;
 }
