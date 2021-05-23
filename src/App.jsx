@@ -17,8 +17,9 @@ import Navbar from './components/navbar';
 import Perfil from './components/perfil';
 import Usuario from './components/usuario';
 import SeachBar from './components/search-bar';
-import MenuPrincipal from './components/menu-principal';
+import TitleMenu from './components/title-menu';
 import MenuMobile from './components/menu-mobile';
+import MenuPrincipal from './components/menu-principal';
 
 // pages
 import Editor from './pages/editor';
@@ -30,13 +31,16 @@ function App() {
 
   const handleMenu = (state) => {
     const element = document.querySelector('.nav__img-menu-container');
+    const menuMobile = document.querySelector('.menu-mobile__container');
 
     if (state) {
       setActive(!state)
       element.classList.toggle('menu__is-active');
+      menuMobile.classList.toggle('menu-mobile__show-menu');
     } else {
       setActive(!state)
       element.classList.toggle('menu__is-active');
+      menuMobile.classList.toggle('menu-mobile__show-menu');
     }
   }
 
@@ -46,15 +50,17 @@ function App() {
         <Navbar>
           <Logo />
           <SeachBar />
-          <Perfil open={() => handleMenu(active)}>
-            <Usuario nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+          <Perfil className="nav__perfil-container" open={() => handleMenu(active)}>
+            <Usuario className='nav__perfil-usuario' nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
           </Perfil>
-          <MenuMobile nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+          <MenuMobile hamburguerPerfilClass="" nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
         </Navbar>
 
         <Main className='main'>
           <div className='side__wrapper side__hidden'>
-            <MenuPrincipal />
+            <MenuPrincipal>
+            <TitleMenu text="MENU" />
+            </MenuPrincipal>
           </div>
           <Switch>
             <Route path="/" exact component={Editor} />
