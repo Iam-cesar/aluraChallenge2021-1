@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const textEditor = () => {
+const textEditor = ({textValue, bgColor}) => {
 
   return (
-    <div className="text-editor__container">
+    <div style={{backgroundColor: `${bgColor}`, border: `2rem solid ${bgColor}`}} className="text-editor__container">
       <div className="text-editor__background">
         <div className="text-editor__dots">
           <span className="text-editor__dots-item"></span>
@@ -12,7 +12,7 @@ const textEditor = () => {
           <span className="text-editor__dots-item"></span>
         </div>
         <div className="text-editor__text-input">
-          <textarea className="text-editor"></textarea>
+          <textarea className="text-editor" defaultValue={textValue} />
         </div>
       </div>
     </div>

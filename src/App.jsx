@@ -4,42 +4,64 @@ import './App.css';
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
 
+// projetos
+import projetos from './projetos';
+
+// router
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 // Component imports
 import Logo from './components/logo';
 import Main from './components/main';
 import Navbar from './components/navbar';
 import Perfil from './components/perfil';
+import Usuario from './components/usuario';
 import SeachBar from './components/search-bar';
-import TextEditor from './components/text-editor';
-import MenuProjeto from './components/menu-projeto';
 import MenuPrincipal from './components/menu-principal';
-import MenuPersonalizacao from './components/menu-personalizacao';
-import BotaoHighlight from './components/botao-highlight/BotaoHighlight';
+import MenuMobile from './components/menu-mobile';
+
+// pages
+import Editor from './pages/editor';
+import Projetos from './pages/projetos';
 
 function App() {
   const [nomeUsuario] = useState('Cesar Augusto');
+  const [active, setActive] = useState(false);
+
+  const handleMenu = (state) => {
+    const element = document.querySelector('.nav__img-menu-container');
+
+    if (state) {
+      setActive(!state)
+      element.classList.toggle('menu__is-active');
+    } else {
+      setActive(!state)
+      element.classList.toggle('menu__is-active');
+    }
+  }
 
   return (
     <>
-      <Navbar>
-        <Logo />
-        <SeachBar />
-        <Perfil nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
-      </Navbar>
+      <Router>
+        <Navbar>
+          <Logo />
+          <SeachBar />
+          <Perfil open={() => handleMenu(active)}>
+            <Usuario nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+          </Perfil>
+          <MenuMobile nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+        </Navbar>
 
-      <Main>
-        <div className='side__wrapper'>
-          <MenuPrincipal />
-        </div>
-        <div className='main__wrapper'>
-          <TextEditor />
-          <BotaoHighlight />
-        </div>
-        <div className='side__wrapper'>
-          <MenuProjeto />
-          <MenuPersonalizacao />
-        </div>
-      </Main>
+        <Main className='main'>
+          <div className='side__wrapper side__hidden'>
+            <MenuPrincipal />
+          </div>
+          <Switch>
+            <Route path="/" exact component={Editor} />
+            <Route path="/projetos" children={<Projetos projetos={projetos} />} />
+          </Switch>
+        </Main>
+      </Router>
     </>
   );
 }

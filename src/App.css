@@ -1,5 +1,5 @@
 :root{
-  --bg-primary-color: #051D3B;
+  --bg-primary-color: #051d3b;
   --bg-editor: #141414;
   --border-color-editor: #6BD1FF;
   --inner-input-color: #ffffff29;
@@ -20,10 +20,48 @@ html{
   margin: 0 auto;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
+body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .side__wrapper{
   width: 20%;
 }
 
 .main__wrapper{
   width: 54%;
+}
+
+@media screen and (max-width: 1128px) {
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main__wrapper{
+    width: 90%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .side__wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 35rem;
+    justify-content: center;
+  }
+
+  main > .side__hidden{
+    display: none;
+  }
+
 }

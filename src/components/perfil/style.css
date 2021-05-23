@@ -1,4 +1,4 @@
-.width{
+.nav__perfil-container{
   width: 20%;
   height: 100%;
   display: flex;
@@ -36,4 +36,37 @@
   align-items: center;
   margin-left: var(--border-radius);
   color: var(--text-color-white);
+}
+
+
+
+@media screen and (max-width: 1128px) {
+  
+  .nav__perfil-container{
+    width: 5%;
+  }
+  
+  .nav__perfil-usuario{
+    display: none;
+  }
+
+  .nav__menu-hamburguer{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__img-menu-container{
+    background: url('../../assets/img/menu-open.svg') no-repeat center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu__is-active{
+    background: url('../../assets/img/menu-closed.svg') no-repeat center;
+    transition: ease-in-out 200ms;
+  }
 }

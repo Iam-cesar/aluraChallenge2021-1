@@ -9,7 +9,7 @@
 .menu-personalizacao__color-picker-container,
 .menu-personalizacao__botao-salvar{ 
   height: 15%;
-  width: 104%;
+  width: 100%;
   padding-left: 1rem;
   border-radius: var(--border-radius);
   border: 0 solid;
@@ -18,6 +18,10 @@
   color: var(--text-color-white);
   margin-bottom: 1rem;
   -moz-appearance: none;
+}
+
+.menu-personalizacao__options{
+  height: 32%;
 }
 
 .menu-personalizacao__option,
@@ -34,6 +38,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 35%;
+}
+
+.personalizacao__options-selecao{
+  height: 50%;
 }
 
 .menu-personalizacao__color-picker{
@@ -55,4 +64,27 @@
 .menu-personalizacao__botao-salvar:hover{
   filter: brightness(100%);
   transition: ease-in-out 200ms;
+}
+
+@media screen and (max-width: 1128px) {
+  .menu-personalizacao__container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .personalizacao__options-selecao{
+    display: flex;
+    width: 100%;
+    height: 17%;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-personalizacao__color-picker-container,
+  .menu-personalizacao__options{
+    height: 100%;
+  }
+  .menu-personalizacao__title{
+    text-align: start;
+  }
 }
