@@ -6,3 +6,41 @@
   width: 96%;
   margin: 2rem auto;
 }
+
+.nav__menu-hamburguer{
+  display: none;
+}
+
+.nav__icon-wrapper{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1128px) {
+  .nav{
+    width: 87%;
+  }
+
+  .nav__icon-wrapper{
+    width: 5%;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .nav__icon-wrapper{
+    width: 20%;
+  }
+}
+
+/* @media screen and (max-width: 425px) {
+  .nav__icon-wrapper{
+    width: 35%;
+    align-items: flex-end;
+  }
+} */

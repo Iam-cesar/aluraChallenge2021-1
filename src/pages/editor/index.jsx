@@ -6,16 +6,16 @@ import MenuProjeto from '../../components/menu-projeto';
 import MenuPersonalizacao from '../../components/menu-personalizacao';
 import BotaoHighlight from '../../components/botao-highlight'
 
-const Editor = () => {
+const Editor = ({color, borderColor}) => {
   return (
     <>
       <div className='main__wrapper'>
-        <TextEditor />
+        <TextEditor bgColor={borderColor} />
         <BotaoHighlight />
       </div>
       <div className='side__wrapper'>
         <MenuProjeto />
-        <MenuPersonalizacao />
+        <MenuPersonalizacao color={color} />
       </div>
     </>
   );

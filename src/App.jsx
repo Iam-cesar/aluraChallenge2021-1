@@ -20,6 +20,7 @@ import SeachBar from './components/search-bar';
 import TitleMenu from './components/title-menu';
 import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
+import SearchBarMobile from './components/searchbar-mobile';
 
 // pages
 import Editor from './pages/editor';
@@ -27,20 +28,49 @@ import Projetos from './pages/projetos';
 
 function App() {
   const [nomeUsuario] = useState('Cesar Augusto');
-  const [active, setActive] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [borderColor, setBorderColor] = useState('#6BD1FF')
+
+  const handleColor = () => {
+    const colorPicker = document.querySelector('.menu-personalizacao__color-picker');
+  
+    colorPicker.addEventListener('input', () => {
+      console.log(colorPicker.value);
+      setBorderColor(colorPicker.value);
+    })
+  }
 
   const handleMenu = (state) => {
     const element = document.querySelector('.nav__img-menu-container');
     const menuMobile = document.querySelector('.menu-mobile__container');
 
     if (state) {
-      setActive(!state)
+      setMenu(!state)
       element.classList.toggle('menu__is-active');
       menuMobile.classList.toggle('menu-mobile__show-menu');
     } else {
-      setActive(!state)
+      setMenu(!state)
       element.classList.toggle('menu__is-active');
       menuMobile.classList.toggle('menu-mobile__show-menu');
+    }
+  }
+
+  const handleSeachBar = (state) => {
+    const navbar = document.querySelector('.nav__search-container');
+    const logo = document.querySelector('.nav__logo-container');
+    const image = document.querySelector('.search-bar-mobile__img-menu-container')
+
+    if (state) {
+      setSearch(!state)
+      navbar.classList.toggle('nav__active');
+      logo.classList.toggle('nav__logo-active');
+      image.classList.toggle('search-bar-mobile__is-active');
+    } else {
+      setSearch(!state)
+      navbar.classList.toggle('nav__active');
+      logo.classList.toggle('nav__logo-active');
+      image.classList.toggle('search-bar-mobile__is-active');
     }
   }
 
@@ -50,20 +80,24 @@ function App() {
         <Navbar>
           <Logo />
           <SeachBar />
-          <Perfil className="nav__perfil-container" open={() => handleMenu(active)}>
-            <Usuario className='nav__perfil-usuario' nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
-          </Perfil>
-          <MenuMobile hamburguerPerfilClass="" nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
+          <div className="nav__icon-wrapper">
+
+            <SearchBarMobile open={() => { handleSeachBar(search) }} />
+            <Perfil className="nav__perfil-container" open={() => handleMenu(menu)}>
+              <Usuario className='nav__perfil-usuario' nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+            </Perfil>
+          </div>
+          <MenuMobile nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
         </Navbar>
 
         <Main className='main'>
           <div className='side__wrapper side__hidden'>
             <MenuPrincipal>
-            <TitleMenu text="MENU" />
+              <TitleMenu text="MENU" />
             </MenuPrincipal>
           </div>
           <Switch>
-            <Route path="/" exact component={Editor} />
+            <Route path="/" exact children={<Editor borderColor={borderColor} color={() => handleColor()} />} />
             <Route path="/projetos" children={<Projetos projetos={projetos} />} />
           </Switch>
         </Main>

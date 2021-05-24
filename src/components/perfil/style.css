@@ -1,5 +1,5 @@
 .nav__perfil-container{
-  width: 20%;
+  width: 100%; 
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -38,12 +38,11 @@
   color: var(--text-color-white);
 }
 
-
-
 @media screen and (max-width: 1128px) {
   
   .nav__perfil-container{
-    width: 5%;
+    width: 3.5rem;
+    min-height: 3.5rem;
   }
   
   .nav__perfil-usuario{
@@ -52,16 +51,16 @@
 
   .nav__menu-hamburguer{
     cursor: pointer;
-    width: 100%;
+    width: 3.5rem;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .nav__img-menu-container{
+  .nav__img-menu-container{    
     background: url('../../assets/img/menu-open.svg') no-repeat center;
-    width: 100%;
+    min-width: 3rem;
     height: 3rem;
   }
 
@@ -78,3 +77,4 @@
     display: flex;
   }
 }
+

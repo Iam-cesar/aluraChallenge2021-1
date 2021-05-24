@@ -4,7 +4,7 @@ import Menu from '../menu';
 import TitleMenu from '../title-menu';
 import Button from '../botao';
 
-const MenuPersonalizacao = () => {
+const MenuPersonalizacao = ({color}) => {
 
   const options = ['javascript', 'python', 'C', 'c++'];
 
@@ -22,7 +22,7 @@ const MenuPersonalizacao = () => {
           })}
         </select>
         <div className='menu-personalizacao__color-picker-container'>
-          <input type='color' className='menu-personalizacao__color-picker' defaultValue='#6BD1FF' />
+          <input type='color' className='menu-personalizacao__color-picker' defaultValue='#6BD1FF' onClick={() => color()} />
         </div>
       </div>
       <Button className='menu-personalizacao__botao-salvar'>

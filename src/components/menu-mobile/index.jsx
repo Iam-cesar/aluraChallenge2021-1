@@ -5,7 +5,7 @@ import MenuPrincipal from '../menu-principal';
 import Perfil from '../perfil';
 import Usuario from '../usuario';
 
-const MenuMobile = ({ nomeUsuario, PerfilImg}) => {
+const MenuMobile = ({ nomeUsuario, PerfilImg }) => {
   return (
     <div className="menu-mobile__container">
       <MenuPrincipal className='menu-mobile__menu' />

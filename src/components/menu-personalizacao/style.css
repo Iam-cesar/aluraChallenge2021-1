@@ -88,3 +88,18 @@
     text-align: start;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .personalizacao__options-selecao{
+    flex-direction: column;
+    height: 50%;
+  }
+
+  .menu-personalizacao__color-picker-container{
+    margin-bottom: 1rem;
+  }
+
+  .menu-personalizacao__options{
+    margin: 0;
+  }
+}

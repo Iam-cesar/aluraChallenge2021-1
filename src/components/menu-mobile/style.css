@@ -13,7 +13,6 @@
   top: 110px;
 }
 
-/* transform: translateX(3000px); */
 .menu-mobile__perfil-container{
   display: flex;
   width: 100%;
@@ -22,14 +21,13 @@
 
 .menu-mobile__dividing-line{
   width: 100%;
-  border: 1px solid var(--botao-color);
+  border-bottom: 1px solid var(--botao-color);
   margin: 1rem 0;
 }
 
 @media screen and (max-width: 1128px) {
   .menu-mobile__show-menu{
     display: flex;
-    /* transition: 300ms ease-in-out; */
     transform: translateX(3000);
   }
 }

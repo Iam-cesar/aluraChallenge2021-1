@@ -19,3 +19,20 @@
 .nav__search:focus{
   outline: 0;
 }
+
+@media screen and (max-width: 650px) {
+  .nav__search-container{
+    display: none;
+  }
+
+  .nav__active{
+    display: flex;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav__active{
+    width: 75%;
+  }
+}
