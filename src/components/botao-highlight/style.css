@@ -17,3 +17,9 @@
   filter: brightness(100%);
   transition: ease-in-out 200ms;
 }
+
+@media screen and (max-width: 1128px) {
+  .highlight__botao-container{
+    margin: 1.5rem 0;
+  }
+}

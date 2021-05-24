@@ -4,42 +4,104 @@ import './App.css';
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
 
+// projetos
+import projetos from './projetos';
+
+// router
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 // Component imports
 import Logo from './components/logo';
 import Main from './components/main';
 import Navbar from './components/navbar';
 import Perfil from './components/perfil';
+import Usuario from './components/usuario';
 import SeachBar from './components/search-bar';
-import TextEditor from './components/text-editor';
-import MenuProjeto from './components/menu-projeto';
+import TitleMenu from './components/title-menu';
+import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
-import MenuPersonalizacao from './components/menu-personalizacao';
-import BotaoHighlight from './components/botao-highlight/BotaoHighlight';
+import SearchBarMobile from './components/searchbar-mobile';
+
+// pages
+import Editor from './pages/editor';
+import Projetos from './pages/projetos';
 
 function App() {
   const [nomeUsuario] = useState('Cesar Augusto');
+  const [menu, setMenu] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [borderColor, setBorderColor] = useState('#6BD1FF')
+
+  const handleColor = () => {
+    const colorPicker = document.querySelector('.menu-personalizacao__color-picker');
+  
+    colorPicker.addEventListener('input', () => {
+      console.log(colorPicker.value);
+      setBorderColor(colorPicker.value);
+    })
+  }
+
+  const handleMenu = (state) => {
+    const element = document.querySelector('.nav__img-menu-container');
+    const menuMobile = document.querySelector('.menu-mobile__container');
+
+    if (state) {
+      setMenu(!state)
+      element.classList.toggle('menu__is-active');
+      menuMobile.classList.toggle('menu-mobile__show-menu');
+    } else {
+      setMenu(!state)
+      element.classList.toggle('menu__is-active');
+      menuMobile.classList.toggle('menu-mobile__show-menu');
+    }
+  }
+
+  const handleSeachBar = (state) => {
+    const navbar = document.querySelector('.nav__search-container');
+    const logo = document.querySelector('.nav__logo-container');
+    const image = document.querySelector('.search-bar-mobile__img-menu-container')
+
+    if (state) {
+      setSearch(!state)
+      navbar.classList.toggle('nav__active');
+      logo.classList.toggle('nav__logo-active');
+      image.classList.toggle('search-bar-mobile__is-active');
+    } else {
+      setSearch(!state)
+      navbar.classList.toggle('nav__active');
+      logo.classList.toggle('nav__logo-active');
+      image.classList.toggle('search-bar-mobile__is-active');
+    }
+  }
 
   return (
     <>
-      <Navbar>
-        <Logo />
-        <SeachBar />
-        <Perfil nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
-      </Navbar>
+      <Router>
+        <Navbar>
+          <Logo />
+          <SeachBar />
+          <div className="nav__icon-wrapper">
 
-      <Main>
-        <div className='side__wrapper'>
-          <MenuPrincipal />
-        </div>
-        <div className='main__wrapper'>
-          <TextEditor />
-          <BotaoHighlight />
-        </div>
-        <div className='side__wrapper'>
-          <MenuProjeto />
-          <MenuPersonalizacao />
-        </div>
-      </Main>
+            <SearchBarMobile open={() => { handleSeachBar(search) }} />
+            <Perfil className="nav__perfil-container" open={() => handleMenu(menu)}>
+              <Usuario className='nav__perfil-usuario' nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+            </Perfil>
+          </div>
+          <MenuMobile nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
+        </Navbar>
+
+        <Main className='main'>
+          <div className='side__wrapper side__hidden'>
+            <MenuPrincipal>
+              <TitleMenu text="MENU" />
+            </MenuPrincipal>
+          </div>
+          <Switch>
+            <Route path="/" exact children={<Editor borderColor={borderColor} color={() => handleColor()} />} />
+            <Route path="/projetos" children={<Projetos projetos={projetos} />} />
+          </Switch>
+        </Main>
+      </Router>
     </>
   );
 }

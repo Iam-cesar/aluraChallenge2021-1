@@ -6,3 +6,7 @@
 .nav__logo-image{
   height: 100%;
 }
+
+.nav__logo-active{
+  display: none;
+}

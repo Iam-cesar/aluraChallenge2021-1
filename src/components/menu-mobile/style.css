@@ -1,0 +1,33 @@
+.menu-mobile__container{
+  display: none;
+  flex-direction: column;
+  background-color: var(--mobile-menu);
+  height: 530px;
+  width: 30vw;
+  min-width: 250px;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  position: absolute;
+  right: 2rem;
+  top: 110px;
+}
+
+.menu-mobile__perfil-container{
+  display: flex;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.menu-mobile__dividing-line{
+  width: 100%;
+  border-bottom: 1px solid var(--botao-color);
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 1128px) {
+  .menu-mobile__show-menu{
+    display: flex;
+    transform: translateX(3000);
+  }
+}

@@ -22,3 +22,13 @@
   border-radius: calc(var(--border-radius) * 2);
   margin-right: 1rem;
 }
+
+.menu__link{
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1128px) {
+  .menu__container{
+    display: none;
+  }
+}

@@ -1,5 +1,5 @@
-.width{
-  width: 20%;
+.nav__perfil-container{
+  width: 100%; 
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -12,7 +12,7 @@
   border-radius: var(--border-radius);
   height: 100%;
   padding: 0 .5rem;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav__perfil-usuario:hover{
@@ -37,3 +37,44 @@
   margin-left: var(--border-radius);
   color: var(--text-color-white);
 }
+
+@media screen and (max-width: 1128px) {
+  
+  .nav__perfil-container{
+    width: 3.5rem;
+    min-height: 3.5rem;
+  }
+  
+  .nav__perfil-usuario{
+    display: none;
+  }
+
+  .nav__menu-hamburguer{
+    cursor: pointer;
+    width: 3.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__img-menu-container{    
+    background: url('../../assets/img/menu-open.svg') no-repeat center;
+    min-width: 3rem;
+    height: 3rem;
+  }
+
+  .menu__is-active{
+    background: url('../../assets/img/menu-closed.svg') no-repeat center;
+    transition: ease-in-out 200ms;
+  }
+
+  .menu-mobile__perfil-hamburguer{
+    display: none;
+  }
+
+  .menu-mobile__hamburguer-perfil-class{
+    display: flex;
+  }
+}
+
