@@ -6,12 +6,12 @@ import MenuProjeto from '../../components/menu-projeto';
 import MenuPersonalizacao from '../../components/menu-personalizacao';
 import BotaoHighlight from '../../components/botao-highlight'
 
-const Editor = ({color, borderColor}) => {
+const Editor = ({color, borderColor, fnHighlight}) => {
   return (
     <>
       <div className='main__wrapper'>
         <TextEditor bgColor={borderColor} />
-        <BotaoHighlight />
+        <BotaoHighlight fnHighlight={fnHighlight} />
       </div>
       <div className='side__wrapper'>
         <MenuProjeto />
