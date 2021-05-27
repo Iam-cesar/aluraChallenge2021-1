@@ -2,11 +2,12 @@ import React from 'react';
 import './style.css';
 import Button from '../botao';
 
-const BotaoHighlight = () => {
+const BotaoHighlight = ({fnHighlight}) => {
   const [highlight] = ['Visualizar com highlight'];
+
   return (
-    <Button className='highlight__botao-container'>
-      <div className="menu__botao-texto">{highlight}</div>
+    <Button type='button' className='highlight__botao-container'>
+      <div className="menu__botao-texto-highlight" onClick={() => fnHighlight()}>{highlight}</div>
     </Button>
   );
 };

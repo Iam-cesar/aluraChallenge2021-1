@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import './App.css';
-
+// highlight
+import hljs from 'highlight.js/lib/core'
+// import da linguagem
+import javascript from 'highlight.js/lib/languages/javascript';
+import php from 'highlight.js/lib/languages/php';
+import c from 'highlight.js/lib/languages/c';
+import python from 'highlight.js/lib/languages/python';
+// import do css
+import 'highlight.js/styles/darcula.css';
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
-
 // projetos
 import projetos from './projetos';
-
 // router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 // Component imports
 import Logo from './components/logo';
 import Main from './components/main';
@@ -21,22 +26,65 @@ import TitleMenu from './components/title-menu';
 import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
 import SearchBarMobile from './components/searchbar-mobile';
-
 // pages
 import Editor from './pages/editor';
 import Projetos from './pages/projetos';
+// registrando as linguagens
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('php', php);
+hljs.registerLanguage('c', c);
+hljs.registerLanguage('python', python);
 
 function App() {
+
+  // variaveis
   const [nomeUsuario] = useState('Cesar Augusto');
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
   const [borderColor, setBorderColor] = useState('#6BD1FF')
+  // const [projetoState, setProjetoState] = useState({
+  //   'textValue': '',
+  //   'titulo': '',
+  //   'descricao': '',
+  //   'bgColor': '',
+  //   'linguagem': '',
+  //   'autor': '',
+  //   'curtidas': '',
+  //   'comentarios': '',
+  // })
+
+  // funções
+  // const handleProjetoState = () => {}
+
+  const handleHoverProjeto = () => {
+    const socialMedias = document.querySelector('.projetos__likes');
+
+    if (socialMedias.classList.contains('projetos__likes')){
+      socialMedias.classList.add('projetos__likes-open');
+    }else{
+      socialMedias.classList.add('projetos__likes');
+    }
+  }
+
+  const handleHighlight = () => {
+    const areaCodigo = document.querySelector('.text-editor__text-codigo-wrapper');
+    const linguagem = document.querySelector('.menu-personalizacao__options');
+    const codigo = areaCodigo.querySelector('code');
+    areaCodigo.innerHTML = `<code class="text-editor language-${linguagem.value}" contentEditable='true' aria-label='editor'></code>`;
+
+    areaCodigo.firstChild.innerText = codigo.innerText;
+
+    hljs.configure({
+      languages: ['javascript', 'python', 'php', 'c'],
+      useBR: true,
+    })
+    hljs.highlightAll();
+  }
 
   const handleColor = () => {
     const colorPicker = document.querySelector('.menu-personalizacao__color-picker');
-  
+
     colorPicker.addEventListener('input', () => {
-      console.log(colorPicker.value);
       setBorderColor(colorPicker.value);
     })
   }
@@ -97,8 +145,8 @@ function App() {
             </MenuPrincipal>
           </div>
           <Switch>
-            <Route path="/" exact children={<Editor borderColor={borderColor} color={() => handleColor()} />} />
-            <Route path="/projetos" children={<Projetos projetos={projetos} />} />
+            <Route path="/" exact children={<Editor fnHighlight={() => handleHighlight()} borderColor={borderColor} color={() => handleColor()} />} />
+            <Route path="/projetos" children={<Projetos handleOverProjeto={() => handleHoverProjeto()} nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} projetos={projetos} />} />
           </Switch>
         </Main>
       </Router>

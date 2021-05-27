@@ -9,8 +9,7 @@
 
 .projetos__item{
   width: 48%;
-  height: 25rem;
-  margin-bottom: 9.625rem;
+  height: max-content;
 }
 
 .projetos__textarea{
@@ -18,12 +17,13 @@
 }
 
 .projetos__info{
-  height: 30%;
+  height: max-content;
   box-sizing: border-box;
-  padding-left: 2rem;
+  padding: 1rem 0px 1rem 2rem;
   color: var(--text-color-white);
   background-color: #00000016;
   border-radius: var(--border-radius);
+  transition: ease-in-out 200ms;
 }
 
 .projetos__titulo{
@@ -32,10 +32,73 @@
   justify-content: flex-start;
   align-items: center;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .projetos__descricao{
   font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.projetos__likes{
+  display: none;
+  justify-content: space-between;
+}
+
+.projetos__likes-open{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.projetos__likes-container-iteracoes-social{
+  display: flex;
+  justify-content: center;
+}
+
+.projetos__container-interacoes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 .5rem;
+  cursor: pointer;
+}
+
+.projetos__likes-image-coments{
+  width: 2.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.projetos__container-interacoes:active{
+  background-color: var(--inner-input-color);
+  border-radius: 16px;
+}
+
+/* color: var(--color-like-iteration); */
+.projetos__contador{
+  color: var(--text-color-white);
+  margin-right: 1rem;
+}
+
+.projetos__likes-image-likes{
+  width: 2.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.svg-like{
+  fill: var(--color-like-iteration);
+}
+
+.projetos__likes-container-usuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
 @media screen and (max-width: 1128px) {
@@ -49,4 +112,32 @@
     width: 90%;
   }
 
+}
+
+@media screen and (max-width: 650px) {
+  .projetos__titulo{
+    font-size: 1.3rem;
+  }
+
+  .projetos__descricao{
+    font-size: 1.1rem;
+  }
+
+  .projetos__info{
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .projetos__info{
+    padding: .8rem;
+  }
+
+  .projetos__likes-container-usuario{
+    width: 35%;
+  }
+
+  .projetos__likes-container-iteracoes-social{
+    width: 55%;
+  }
 }

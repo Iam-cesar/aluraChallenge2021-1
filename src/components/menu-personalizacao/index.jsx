@@ -6,7 +6,7 @@ import Button from '../botao';
 
 const MenuPersonalizacao = ({color}) => {
 
-  const options = ['javascript', 'python', 'C', 'c++'];
+  const options = ['javascript', 'python', 'C', 'php'];
 
   const [salvar] = ['Salvar projeto'];
 
