@@ -57,6 +57,7 @@
   color: var(--text-color-white);
   white-space: pre-wrap;
   font-size: 1.1rem;
+  overflow: hidden;
 }
 
 code{
@@ -81,6 +82,7 @@ code{
 @media screen and (max-width: 650px) {
   .text-editor{
     width: 97%;
+    font-size: .9rem;
   }
 }
 

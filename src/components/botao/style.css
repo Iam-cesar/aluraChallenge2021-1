@@ -1,16 +1,39 @@
+.menu__botao-container{
+  --menu__botao-size: 3rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  width: 100%;
+  cursor: pointer;
+  opacity: .7;
+}
+
 .menu__botao-texto{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: var(--text-color-white);
   font-size: 1.1rem;
-  opacity: 100%;
+}
+
+.menu__botao-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--menu__botao-size);
+  height: var(--menu__botao-size); 
+  background-color: var(--botao-color);
+  border-radius: calc(var(--border-radius) * 2);
+  margin-right: 1rem;
 }
 
 .menu__botao-container:focus{
-  opacity: 100%;
+  opacity: 10;
 }
 
 .menu__botao-container:hover{
-  opacity: 76%;
+  opacity: .8;
 }

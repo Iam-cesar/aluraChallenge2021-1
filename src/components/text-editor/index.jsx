@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const textEditor = ({ bgColor }) => {
+const textEditor = ({ bgColor, textValue }) => {
 
   return (
     <div style={{ backgroundColor: `${bgColor}`, border: `2rem solid ${bgColor}` }} className="text-editor__container">
@@ -12,7 +12,7 @@ const textEditor = ({ bgColor }) => {
           <span className="text-editor__dots-item"></span>
         </div>
         <pre className="text-editor__text-codigo-wrapper">
-          <code className="text-editor" contentEditable='true' aria-label='editor'></code>
+          <code className="text-editor" contentEditable='true' aria-label='editor' >{textValue}</code>
         </pre>
       </div>
     </div>

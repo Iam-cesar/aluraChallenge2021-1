@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as ImgCodeOff } from '../../assets/img/codeoff.svg';
 import { ReactComponent as ImgUsers } from '../../assets/img/users.svg';
 
-const MenuPrincipal = ({children, className}) => {
+const MenuPrincipal = ({ children, className }) => {
 
   let [editor, comunidade] = ['Editor de codigo', 'Comunidade']
 

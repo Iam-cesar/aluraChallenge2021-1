@@ -1,49 +1,21 @@
 const projetos = [{
-  'textValue': `const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+  'textValue': `class AluraDevChallenge2021:
+      def __init__(self, nome, sobrenome):
+          self.nome = nome
+          self.sobrenome = sobrenome
 
-  const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-  
-  const unfold = (f, seed) => {
-    const go = (f, seed, acc) => {
-      const res = f(seed)
-      return res ? go(f, res[1], acc.concat([res[0]])) : acc
-    }
-    return go(f, seed, [])
-  }`,
-  'titulo': 'Projeto javascript',
-  'descricao': 'Projeto mais dificil da vida',
-  'bgColor': '#a4a4a4',
-}, {
-  'textValue': `const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+      def apresentacao():
+          return f'Prazer sou {self.nome} {self.sobrenome}, seja bem vindo ao meu projeto'
 
-  const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-  
-  const unfold = (f, seed) => {
-    const go = (f, seed, acc) => {
-      const res = f(seed)
-      return res ? go(f, res[1], acc.concat([res[0]])) : acc
-    }
-    return go(f, seed, [])
-  }`,
-  'titulo': 'Projeto javascript',
-  'descricao': 'Projeto mais dificil da vida',
-  'bgColor': '#a4a4a4',
-},
-{
-  'textValue': `const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
-
-  const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-  
-  const unfold = (f, seed) => {
-    const go = (f, seed, acc) => {
-      const res = f(seed)
-      return res ? go(f, res[1], acc.concat([res[0]])) : acc
-    }
-    return go(f, seed, [])
-  }`,
-  'titulo': 'Projeto javascript',
-  'descricao': 'Projeto mais dificil da vida',
-  'bgColor': '#a4a4a4',
-}]
+      def __str__(self):
+          return f'dev front-end {self.nome} {self.sobrenome}'`,
+  'titulo': 'Alura challenge 2021',
+  'descricao': 'Desafio Alura para treinar novos devs.',
+  'bgColor': '#7f1783',
+  'linguagem': 'python',
+  'autor': 'Cesar Augusto',
+  'curtidas': '1M',
+  'comentarios': '569mil',
+}];
 
 export default projetos;
