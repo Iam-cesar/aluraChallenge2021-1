@@ -18,7 +18,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg }) => {
 
             <div className='projetos__info'>
 
-              <h5 className='projetos__titulo'>{`${index} - ${item.titulo}` ?? ''}</h5>
+              <h5 className='projetos__titulo'>{item.titulo ?? ''}</h5>
               <p className='projetos__descricao'>{item.descricao ?? ''}</p>
               <SocialMedia PerfilImg={PerfilImg} nomeUsuario={nomeUsuario} />
 
