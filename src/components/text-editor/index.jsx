@@ -4,7 +4,7 @@ import './style.css';
 const textEditor = ({ bgColor, textValue }) => {
 
   return (
-    <div style={{ backgroundColor: `${bgColor}`, border: `2rem solid ${bgColor}` }} className="text-editor__container">
+    <div style={{ border: `2rem solid ${bgColor}`, backgroundColor: `${bgColor}` }} className="text-editor__container">
       <div className="text-editor__background">
         <div className="text-editor__dots">
           <span className="text-editor__dots-item"></span>
@@ -12,7 +12,7 @@ const textEditor = ({ bgColor, textValue }) => {
           <span className="text-editor__dots-item"></span>
         </div>
         <pre className="text-editor__text-codigo-wrapper">
-          <code className="text-editor" contentEditable='true' aria-label='editor' >{textValue}</code>
+          <code className="text-editor" suppressContentEditableWarning={true} contentEditable='true' aria-label='editor' >{textValue}</code>
         </pre>
       </div>
     </div>
