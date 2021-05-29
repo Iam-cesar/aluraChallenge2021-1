@@ -27,7 +27,7 @@ const MenuPrincipal = ({ children, className }) => {
           </Button>
         </Link>
 
-        <Link className="menu__link" to='/projetos'>
+        <Link className="menu__link" to='/projetos' >
           <Button className="menu__botao-container" >
             <Img className="menu__botao-img" image={<ImgUsers />} />
             <div className="menu__botao-texto">

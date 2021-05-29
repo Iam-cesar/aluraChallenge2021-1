@@ -61,6 +61,14 @@
   filter: brightness(90%);
 }
 
+.menu-personalizacao__botao-salvar span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu-personalizacao__botao-salvar:hover{
   filter: brightness(100%);
   transition: ease-in-out 200ms;
