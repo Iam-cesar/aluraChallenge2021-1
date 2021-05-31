@@ -10,11 +10,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: brightness(80%);
+
 }
 
 .highlight__botao-container:hover{
-  filter: brightness(100%);
+  filter: saturate(100%);
   transition: ease-in-out 200ms;
 }
 

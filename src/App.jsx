@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 // highlight
 import hljs from 'highlight.js/lib/core';
-// import da linguagem
+// import da linguagem highlight.js
 import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
 import c from 'highlight.js/lib/languages/c';
 import python from 'highlight.js/lib/languages/python';
-// import do css
+// css highlight.js
 import 'highlight.js/styles/darcula.css';
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
-// projetos
+// hook para local Storage
 import useLocalStorage from './hooks/useLocalStorage.js';
 // router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -52,8 +52,33 @@ function App() {
   // const [coments] = useState([])
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
-
   const [projeto, setProjeto] = useLocalStorage('projeto', [])
+
+  useEffect(() => {
+
+    document.addEventListener('click', (event) => {
+      // responsavel por fechar o menu mobile quando clicado fora ou quando seleciona um item
+      const element = document.querySelector('.nav__img-menu-container');
+      const menuMobile = document.querySelector('.menu-mobile__container');
+
+      if(event.target !== menuMobile && event.target !== element){
+        element.classList.remove('menu__is-active');
+        menuMobile.classList.remove('menu-mobile__show-menu');
+      }
+
+      // responsavel por fechar a barra de pesquisa quando clicar fora
+      const navbar = document.querySelector('.nav__search-container');
+      const input = document.querySelector('.nav__search');
+      const logo = document.querySelector('.nav__logo-container');
+      const image = document.querySelector('.search-bar-mobile__img-menu-container')
+
+      if(event.target !== navbar && event.target !== image && event.target !== input){
+        navbar.classList.remove('nav__active');
+        logo.classList.remove('nav__logo-active');
+        image.classList.remove('search-bar-mobile__is-active');
+      }
+    })
+  });
 
   return (
     <>
