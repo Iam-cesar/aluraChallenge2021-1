@@ -6,7 +6,7 @@ const Perfil = ({ open, children, className, hamburguerClass }) => {
     <div className={className} >
       {children}
       <div className={`nav__menu-hamburguer ${hamburguerClass}`} >
-        <div className='nav__img-menu-container'  onClick={() => open()}></div>
+        <div className='nav__img-menu-container' onClick={() => open()}></div>
       </div>
     </div>
   );

@@ -64,6 +64,10 @@
     height: 3rem;
   }
 
+  .nav__img-menu-container:hover body{
+    background-color: black;
+  }
+
   .menu__is-active{
     background: url('../../assets/img/menu-closed.svg') no-repeat center;
     transition: ease-in-out 200ms;

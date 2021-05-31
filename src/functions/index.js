@@ -36,16 +36,16 @@ const handleColor = (setBorderColor) => {
   })
 }
 
-const handleMenu = (state, setMenu) => {
+const handleMenu = (state, setState) => {
   const element = document.querySelector('.nav__img-menu-container');
   const menuMobile = document.querySelector('.menu-mobile__container');
 
-  if (state) {
-    setMenu(!state)
+  if (!state) {
+    setState(!state)
     element.classList.toggle('menu__is-active');
     menuMobile.classList.toggle('menu-mobile__show-menu');
   } else {
-    setMenu(!state)
+    setState(!state)
     element.classList.toggle('menu__is-active');
     menuMobile.classList.toggle('menu-mobile__show-menu');
   }
@@ -56,7 +56,7 @@ const handleSeachBar = (state, setSearch) => {
   const logo = document.querySelector('.nav__logo-container');
   const image = document.querySelector('.search-bar-mobile__img-menu-container')
 
-  if (state) {
+  if (!state) {
     setSearch(!state)
     navbar.classList.toggle('nav__active');
     logo.classList.toggle('nav__logo-active');

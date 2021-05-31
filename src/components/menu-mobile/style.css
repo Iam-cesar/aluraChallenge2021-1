@@ -2,7 +2,7 @@
   display: none;
   flex-direction: column;
   background-color: var(--mobile-menu);
-  height: 530px;
+  height: 85vh;
   width: 30vw;
   min-width: 250px;
   padding: 1rem;
