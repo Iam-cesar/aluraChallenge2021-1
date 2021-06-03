@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+// import fileSaver
+import { saveAs } from 'file-saver';
+// import dom-to-img
+import DomToImage from 'dom-to-image';
 // highlight
 import hljs from 'highlight.js/lib/core';
 // import da linguagem highlight.js
@@ -7,8 +11,8 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
 import c from 'highlight.js/lib/languages/c';
 import python from 'highlight.js/lib/languages/python';
-// css highlight.js
-import 'highlight.js/styles/darcula.css';
+// css theme highlight.js
+import 'highlight.js/styles/lioshi.css';
 // image imports
 import PerfilImg from './assets/img/perfil.jpg';
 // hook para local Storage
@@ -36,6 +40,9 @@ import {
   handleMenu,
   handleSeachBar,
   handleState,
+  handleLike,
+  apagarCard,
+  exportar,
 } from './functions';
 // registrando as linguagens
 hljs.registerLanguage('javascript', javascript);
@@ -48,8 +55,6 @@ function App() {
   // variaveis
   const [nomeUsuario] = useState('Cesar Augusto');
   const [borderColor, setBorderColor] = useState('#6BD1FF');
-  // const [likes] = useState(0)
-  // const [coments] = useState([])
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
   const [projeto, setProjeto] = useLocalStorage('projeto', [])
@@ -61,7 +66,7 @@ function App() {
       const element = document.querySelector('.nav__img-menu-container');
       const menuMobile = document.querySelector('.menu-mobile__container');
 
-      if(event.target !== menuMobile && event.target !== element){
+      if (event.target !== menuMobile && event.target !== element) {
         element.classList.remove('menu__is-active');
         menuMobile.classList.remove('menu-mobile__show-menu');
       }
@@ -72,12 +77,15 @@ function App() {
       const logo = document.querySelector('.nav__logo-container');
       const image = document.querySelector('.search-bar-mobile__img-menu-container')
 
-      if(event.target !== navbar && event.target !== image && event.target !== input){
+      if (event.target !== navbar && event.target !== image && event.target !== input) {
         navbar.classList.remove('nav__active');
         logo.classList.remove('nav__logo-active');
         image.classList.remove('search-bar-mobile__is-active');
       }
     })
+
+    // ativa o highlight depois de qualquer alteração na pagina
+    hljs.highlightAll()
   });
 
   return (
@@ -103,7 +111,7 @@ function App() {
         <Main className='main'>
 
           <div className='side__wrapper side__hidden'>
-            <MenuPrincipal>
+            <MenuPrincipal hljs={hljs ?? ''}>
               <TitleMenu text="MENU" />
             </MenuPrincipal>
           </div>
@@ -112,10 +120,11 @@ function App() {
             <Route path="/" exact children={
               <Editor
                 defaultColor={borderColor}
-                save={() => handleState(projeto, setProjeto)}
+                salvar={() => handleState(projeto, setProjeto)}
                 fnHighlight={() => handleHighlight(hljs)}
                 borderColor={borderColor}
                 color={() => handleColor(setBorderColor)}
+                exportar={() => exportar()}
               />}
             />
 
@@ -124,6 +133,8 @@ function App() {
                 nomeUsuario={nomeUsuario}
                 PerfilImg={PerfilImg}
                 projetos={projeto}
+                like={event => handleLike(event)}
+                apagar={event => apagarCard(event, projeto, setProjeto)}
               />}
             />
           </Switch>

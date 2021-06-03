@@ -10,8 +10,8 @@ const MenuProjeto = () => {
     <Menu className="menu-projeto__container">
       <div className="menu-projeto__container-input">
       <TitleMenu text="SEU PROJETO" />
-        <Input type="text" placeholder="Nome do seu projeto" className="menu-projeto__input" />
-        <TextArea className="menu-projeto__descricao" placeholder="Descrição do seu projeto" />
+        <Input type="text" placeholder="Nome do seu projeto" className="menu-projeto__input" required/>
+        <TextArea className="menu-projeto__descricao" placeholder="Descrição do seu projeto" required/>
       </div>
     </Menu>
   );

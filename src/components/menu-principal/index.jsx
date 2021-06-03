@@ -1,11 +1,12 @@
 import React from 'react';
 import './style.css';
 import Menu from '../menu';
-import Button from '../botao';
 import Img from '../Img';
 
 // router
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+// highlight.js
+import hljs from 'highlight.js/lib/core.js';
 
 import { ReactComponent as ImgCodeOff } from '../../assets/img/codeoff.svg';
 import { ReactComponent as ImgUsers } from '../../assets/img/users.svg';
@@ -18,23 +19,33 @@ const MenuPrincipal = ({ children, className }) => {
     <Menu>
       <div className={className}>
         {children}
-        <Link className="menu__link" to='/'>
-          <Button className="menu__botao-container" >
-            <Img className="menu__botao-img" image={<ImgCodeOff />} />
-            <div className="menu__botao-texto">
-              <span>{editor}</span>
-            </div>
-          </Button>
-        </Link>
+        <NavLink
+          exact
+          activeClassName={'menu__botao-container-hover'}
+          className="menu__link menu__botao-container"
+          to='/'
+        >
+          <Img className="menu__botao-img" image={<ImgCodeOff />} />
+          <div className="menu__botao-texto">
+            <span>{editor}</span>
+          </div>
+        </NavLink>
 
-        <Link className="menu__link" to='/projetos' >
-          <Button className="menu__botao-container" >
-            <Img className="menu__botao-img" image={<ImgUsers />} />
-            <div className="menu__botao-texto">
-              <span>{comunidade}</span>
-            </div>
-          </Button>
-        </Link>
+        <NavLink
+          onClick={() => {
+            setTimeout(()=>{
+              hljs.highlightAll()
+            }, 100)
+          }}
+          activeClassName={'menu__botao-container-hover'}
+          className="menu__link menu__botao-container"
+          to='/projetos'
+        >
+          <Img className="menu__botao-img" image={<ImgUsers />} />
+          <div className="menu__botao-texto">
+            <span>{comunidade}</span>
+          </div>
+        </NavLink>
       </div>
     </Menu>
   );

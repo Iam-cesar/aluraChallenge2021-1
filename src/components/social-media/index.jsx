@@ -5,28 +5,22 @@ import './style.css';
 import { ReactComponent as Like } from '../../assets/img/likes.svg';
 import { ReactComponent as Coments } from '../../assets/img/coments.svg';
 
-const SocialMedia = ({ PerfilImg, nomeUsuario }) => {
+
+const SocialMedia = ({ PerfilImg, nomeUsuario, like }) => {
+
   return (
     <div className='projetos__likes'>
 
       <div className='projetos__likes-container-iteracoes-social'>
 
         <div className='projetos__container-interacoes'>
-          <div className='projetos__likes-image-coments'>
-            <Coments />
-          </div>
-          <span className='projetos__contador'>120</span>
+          <Coments className='projetos__comment-icon'></Coments>
+          <span className='projetos__contador'>0</span>
         </div>
 
-        <div className='projetos__container-interacoes'>
-
-          <div className='projetos__likes-image-likes'>
-            <Like onClick={() => {
-            const like = document.querySelector('.projetos__likes-image-likes > svg > path')
-            like.classList.toggle('svg-like')
-          }} />
-          </div>
-          <span className='projetos__contador'>50</span>
+        <div className='projetos__container-interacoes' onClick={e => like(e)}>
+          <Like className='projetos__like-icon'></Like>
+          <span className='projetos__contador projetos__contador-likes'>0</span>
         </div>
       </div>
 
