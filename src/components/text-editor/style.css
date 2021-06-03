@@ -16,9 +16,16 @@
   width: calc(100% - 2rem);
 }
 
-.text-editor__dots{
-  width: 100%;
+.text-editor__dots-export-container{
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 2rem;
+}
+
+.text-editor__dots{
+  display: flex;
+  justify-content: space-between;
   flex-direction: row;
   background-color: var(--bg-editor);
   margin-bottom: .5rem;

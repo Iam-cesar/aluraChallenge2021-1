@@ -1,68 +1,93 @@
-const handleState = (state, setState) => {
-  const texto = document.querySelector('.text-editor').innerText
-  const titulo = document.querySelector('.menu-projeto__input').value
-  const descricao = document.querySelector('.menu-projeto__descricao').value
-  const colorPicker = document.querySelector('.menu-personalizacao__color-picker').value
+const exportar = () => {
+  console.log('funciona')
+}
 
-  setState([{
-    textValue: `${texto}`,
-    titulo: `${titulo}`,
-    descricao: `${descricao}`,
-    bgColor: `${colorPicker}`,
-    PerfilImg: state.PerfilImg,
-    nomeUsuario: state.nomeUsuario,
-  }, ...state])
+const apagarCard = (event, state, setState) => { 
+  setState(
+    // filtra e exclui o item que tiver o id igual sua posição no indice
+    state.filter((item, index) => parseInt(event.target.id) !== index)
+  )
+}
+
+const handleLike = (event) => {
+  // muda a cor do icone de like da pagina
+  // implementar a contagem de likes
+  event.target.classList.add('svg-like');
+}
+
+const handleState = (state, setState) => {
+  // muda estado para cada card
+  let texto = document.querySelector('.text-editor')
+  let titulo = document.querySelector('.menu-projeto__input')
+  let descricao = document.querySelector('.menu-projeto__descricao')
+  let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
+
+  // se algum dos campos for vazio nao salvara o card
+  if(texto.innerText !== '' || titulo.value !== '' || descricao.value !== ''){ 
+    setState([{
+      textValue: `${texto.innerText}`,
+      titulo: `${titulo.value}`,
+      descricao: `${descricao.value}`,
+      bgColor: `${colorPicker.value}`,
+      // PerfilImg: state.PerfilImg,
+      // nomeUsuario: state.nomeUsuario,
+    }, ...state])
+    // "...state" faz com que os mais recentes apareçam primeiro
+  }
+
+  // reseta os campos ao clicar em salvar depois que o state é alterado
+  texto.innerText = ''
+  titulo.value = ''
+  descricao.value = ''
 }
 
 const handleHighlight = (hljs) => {
-  const areaCodigo = document.querySelector('.text-editor__text-codigo-wrapper');
-  const linguagem = document.querySelector('.menu-personalizacao__options');
-  const codigo = areaCodigo.querySelector('code');
+  // responsavel por gerenciar o highlightJs
+  let areaCodigo = document.querySelector('.text-editor__text-codigo-wrapper');
+  let linguagem = document.querySelector('.menu-personalizacao__options');
+  let codigo = areaCodigo.querySelector('code');
   areaCodigo.innerHTML = `<code class="text-editor language-${linguagem.value}" contentEditable='true' aria-label='editor'></code>`;
 
   areaCodigo.firstChild.innerText = codigo.innerText;
 
   hljs.configure({
     languages: ['javascript', 'python', 'php', 'c'],
-  })
+  });
+
   hljs.highlightAll();
 }
 
 const handleColor = (setBorderColor) => {
-  const colorPicker = document.querySelector('.menu-personalizacao__color-picker');
+  // responsavel pelo input color e pela borda colorida do card
+  let colorPicker = document.querySelector('.menu-personalizacao__color-picker');
 
   colorPicker.addEventListener('input', () => {
+    // captura o valor do input
     setBorderColor(colorPicker.value);
   })
 }
 
 const handleMenu = (state, setState) => {
-  const element = document.querySelector('.nav__img-menu-container');
-  const menuMobile = document.querySelector('.menu-mobile__container');
+  // responsavel por abrir e fechar o menu mobile
+  let element = document.querySelector('.nav__img-menu-container');
+  let menuMobile = document.querySelector('.menu-mobile__container');
 
   if (!state) {
-    setState(!state)
+    setState(state)
     element.classList.toggle('menu__is-active');
     menuMobile.classList.toggle('menu-mobile__show-menu');
-  } else {
-    setState(!state)
-    element.classList.toggle('menu__is-active');
-    menuMobile.classList.toggle('menu-mobile__show-menu');
-  }
+  } 
+  
 }
 
 const handleSeachBar = (state, setSearch) => {
-  const navbar = document.querySelector('.nav__search-container');
-  const logo = document.querySelector('.nav__logo-container');
-  const image = document.querySelector('.search-bar-mobile__img-menu-container')
+  // responsvel por abrir e fechar a barra de pesquisa mobile
+  let navbar = document.querySelector('.nav__search-container');
+  let logo = document.querySelector('.nav__logo-container');
+  let image = document.querySelector('.search-bar-mobile__img-menu-container')
 
   if (!state) {
-    setSearch(!state)
-    navbar.classList.toggle('nav__active');
-    logo.classList.toggle('nav__logo-active');
-    image.classList.toggle('search-bar-mobile__is-active');
-  } else {
-    setSearch(!state)
+    setSearch(state)
     navbar.classList.toggle('nav__active');
     logo.classList.toggle('nav__logo-active');
     image.classList.toggle('search-bar-mobile__is-active');
@@ -75,4 +100,7 @@ export {
   handleMenu,
   handleSeachBar,
   handleState,
+  handleLike,
+  apagarCard,
+  exportar,
 }
