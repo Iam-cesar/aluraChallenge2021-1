@@ -1,3 +1,65 @@
+--- Documentação ---
+
+Projeto "desafio front-end #aluradev";
+
+## como rodar localmente
+
+primeiro faça o download do projeto para ser computador,
+clone ou baixe os arquivos desse repositorio do github: https://github.com/cesar-abj/aluraChallenge2021-1,
+
+No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
+
+## modularização
+
+No projetos existem quatro pastas: pages, hooks, components e functions.
+
+# pages
+
+Contem as paginas da aplicação
+
+# functions
+
+Contem as funçoes que foram utilizadas, cada função tem sua descrição em forma de comentario dentro de seu corpo
+
+# hooks
+
+Contem os hooks utilizados, tambem comentado destro do seu proprio corpo
+
+# components
+
+Contem os componentes ou blocos de construção de cada parte da aplicação
+
+
+## CSS e estilização
+
+# padrao de projeto
+
+O nome das classes foi pensado da seguinte maneira "'nome-bloco__texto' ou 'nome-bloco__paragrafo-container'",
+
+o nome do elemento vem antes dos underlines e o nome do elemento vem depois dos underlines.
+
+-> Esse padrão é algo parecido com o BEM.
+
+
+## tecnologias
+
+# React
+
+Utilizei o react para treinar minhas habilidades e reforçãr os cursos que tenho feito sobre essa biblioteca.
+
+# React-dom-router
+
+Tinha um pouco de dificuldades em aprender o router mas depois desse projeto, minhas duvidas diminuiram e aprendi bem mais
+sobre o ROUTER do que eu esperava.
+
+# css
+
+Sobre o css, eu tentei utilizar o maximo possivel, só utilizando o javascript quando não encontrasse de fato uma soluçao com o css.
+
+
+--- Documentação ---
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
