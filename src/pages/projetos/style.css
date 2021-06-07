@@ -94,6 +94,7 @@
 .projetos__contador {
   color: var(--text-color-white);
   margin-right: 1rem;
+  z-index: -1;
 }
 
 .projetos__likes-image-likes {

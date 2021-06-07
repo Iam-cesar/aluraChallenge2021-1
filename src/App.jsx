@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-// import fileSaver
-import { saveAs } from 'file-saver';
-// import dom-to-img
-import DomToImage from 'dom-to-image';
+// // import fileSaver
+// import { saveAs } from 'file-saver';
+// // import dom-to-img
+// import DomToImage from 'dom-to-image';
 // highlight
 import hljs from 'highlight.js/lib/core';
 // import da linguagem highlight.js

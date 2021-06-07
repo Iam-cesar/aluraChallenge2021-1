@@ -2,17 +2,26 @@ const exportar = () => {
   console.log('funciona')
 }
 
-const apagarCard = (event, state, setState) => { 
+const apagarCard = (event, state, setState) => {
   setState(
     // filtra e exclui o item que tiver o id igual sua posição no indice
-    state.filter((item, index) => parseInt(event.target.id) !== index)
+    state.filter((_item, index) => parseInt(event.target.id) !== index)
   )
 }
 
-const handleLike = (event) => {
-  // muda a cor do icone de like da pagina
-  // implementar a contagem de likes
-  event.target.classList.add('svg-like');
+const handleLike = ({ id, event }) => {
+  
+  let iconeLike = event.target.firstChild.firstChild;
+  let contadorLikes = event.target.lastChild
+  // se o id for igual ao do event.target e o contador de likes for menor que 1
+  if (parseInt(event.target.id) === id && parseInt(contadorLikes.innerHTML) < 1) {
+    // muda a cor do icone de like da pagina
+    iconeLike.classList.add('svg-like')
+    // faz a contagem de likes
+    contadorLikes.innerHTML = parseInt(contadorLikes.innerHTML) + 1;
+  }
+
+
 }
 
 const handleState = (state, setState) => {
@@ -23,14 +32,12 @@ const handleState = (state, setState) => {
   let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
 
   // se algum dos campos for vazio nao salvara o card
-  if(texto.innerText !== '' || titulo.value !== '' || descricao.value !== ''){ 
+  if (texto.innerText !== '' || titulo.value !== '' || descricao.value !== '') {
     setState([{
       textValue: `${texto.innerText}`,
       titulo: `${titulo.value}`,
       descricao: `${descricao.value}`,
       bgColor: `${colorPicker.value}`,
-      // PerfilImg: state.PerfilImg,
-      // nomeUsuario: state.nomeUsuario,
     }, ...state])
     // "...state" faz com que os mais recentes apareçam primeiro
   }
@@ -76,8 +83,8 @@ const handleMenu = (state, setState) => {
     setState(state)
     element.classList.toggle('menu__is-active');
     menuMobile.classList.toggle('menu-mobile__show-menu');
-  } 
-  
+  }
+
 }
 
 const handleSeachBar = (state, setSearch) => {
