@@ -1,6 +1,6 @@
 .text-editor__exportar {
   height: 100%;
-  width: 7.5rem;
+  width: 8rem;
 }
 
 .text-editor__formatos-exportar {
@@ -14,6 +14,8 @@
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
+  outline: none;
+  padding-left: 10px;
 }
 
 .text-editor__formatos-exportar option {
@@ -27,10 +29,10 @@
   height: 100%;
   cursor: pointer;
   border: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 0;
 }
 
-.text-editor__botao-exportar:active{
+.text-editor__botao-exportar:active {
   filter: brightness(60%);
 }

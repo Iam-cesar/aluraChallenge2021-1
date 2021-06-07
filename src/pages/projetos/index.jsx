@@ -26,7 +26,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
                 <span id={index} className="projetos__delete" onClick={e => apagar(e)}></span>
               </div>
               <p className='projetos__descricao'>{item.descricao ?? ''}</p>
-              <SocialMedia PerfilImg={PerfilImg} nomeUsuario={nomeUsuario} likesContador={likesContador} like={e => like(e)} />
+              <SocialMedia id={index} PerfilImg={PerfilImg} nomeUsuario={nomeUsuario} likesContador={likesContador} like={e => like(e)} />
             </div>
           </div>
         );

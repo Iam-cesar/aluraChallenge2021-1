@@ -6,7 +6,7 @@ import { ReactComponent as Like } from '../../assets/img/likes.svg';
 import { ReactComponent as Coments } from '../../assets/img/coments.svg';
 
 
-const SocialMedia = ({ PerfilImg, nomeUsuario, like }) => {
+const SocialMedia = ({ PerfilImg, nomeUsuario, like, id }) => {
 
   return (
     <div className='projetos__likes'>
@@ -18,7 +18,7 @@ const SocialMedia = ({ PerfilImg, nomeUsuario, like }) => {
           <span className='projetos__contador'>0</span>
         </div>
 
-        <div className='projetos__container-interacoes' onClick={e => like(e)}>
+        <div id={id} className='projetos__container-interacoes like' onClick={(event) => like({id, event})}>
           <Like className='projetos__like-icon'></Like>
           <span className='projetos__contador projetos__contador-likes'>0</span>
         </div>
