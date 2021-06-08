@@ -19,10 +19,15 @@
   margin-bottom: 1rem;
   -moz-appearance: none;
   appearance: none;
+  box-sizing: border-box;
 }
 
 .menu-personalizacao__options{
   height: 32%;
+}
+
+.menu-personalizacao__options:hover{
+  cursor: pointer;
 }
 
 .menu-personalizacao__option,
@@ -57,7 +62,7 @@
 }
 
 .menu-personalizacao__botao-salvar{
-  background-color: var(--color-save-button);
+  background-color: var(--botao-color);
   cursor: pointer;
   filter: brightness(90%);
 }

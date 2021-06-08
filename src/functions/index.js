@@ -1,5 +1,29 @@
-const exportar = () => {
-  console.log('funciona')
+const exportar = (moduleDTI, saveAs) => {
+  let formato = document.querySelector('.text-editor__formatos-exportar')
+  let node = document.querySelector('.text-editor__container')
+
+  switch (formato.value) {
+    case 'svg':
+      // filtra todas as tags i do html
+      let filter = node => node.tagName !== 'i'
+
+      // salva o undereço da imagem no formato svg
+      moduleDTI.toSvg(node, { filter })
+        .then(dataUrl => window.saveAs(dataUrl, 'my-code.svg'))
+      break
+
+    case 'png':
+      moduleDTI.toBlob(node)
+        .then(blob => window.saveAs(blob, `my-code.${formato.value}`))
+      break
+
+    case 'jpg':
+      moduleDTI.toJpeg(node, {quality: 0.9})
+        .then(dataUrl => saveAs(dataUrl, 'my-code.jpg'))
+      break
+
+    default: return;
+  }
 }
 
 const apagarCard = (event, state, setState) => {
@@ -10,7 +34,7 @@ const apagarCard = (event, state, setState) => {
 }
 
 const handleLike = ({ id, event }) => {
-  
+
   let iconeLike = event.target.firstChild.firstChild;
   let contadorLikes = event.target.lastChild
   // se o id for igual ao do event.target e o contador de likes for menor que 1
@@ -20,8 +44,6 @@ const handleLike = ({ id, event }) => {
     // faz a contagem de likes
     contadorLikes.innerHTML = parseInt(contadorLikes.innerHTML) + 1;
   }
-
-
 }
 
 const handleState = (state, setState) => {

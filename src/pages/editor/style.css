@@ -15,10 +15,10 @@
   font-size: 1rem;
   cursor: pointer;
   outline: none;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
-.text-editor__formatos-exportar option {
+.text-editor__formatos-exportar > option {
   color: black;
   background-color: #ccc;
 }

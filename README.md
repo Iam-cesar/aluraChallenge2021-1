@@ -1,44 +1,41 @@
---- Documentação ---
-
 Projeto "desafio front-end #aluradev";
 
-## como rodar localmente
+# como rodar localmente
 
 primeiro faça o download do projeto para ser computador,
 clone ou baixe os arquivos desse repositorio do github: https://github.com/cesar-abj/aluraChallenge2021-1,
 
 No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
 
-## modularização
+# modularização
 
-No projetos existem quatro pastas: pages, hooks, components e functions.
+No projetos existem quatro pastas principais: pages, hooks, components e functions.
 
-### pages
+## pages
 
 Contem as paginas da aplicação
 
-### functions
+## functions
 
-Contem as funçoes que foram utilizadas, cada função tem sua descrição em forma de comentario dentro de seu corpo
+Contem as funçoes que foram utilizadas, cada função tem sua descrição comentado dentro de seu corpo
 
-### hooks
+## hooks customizados
 
 Contem os hooks utilizados, tambem comentado destro do seu proprio corpo
 
-# UseLocalStorage
+### UseLocalStorage
 
 Usa o armazenamento local do navegador "Local Storage", recebe dois parametros;
 O primeiro é o estado ou objeto a ser armazenado;
 O segundo é uma função para alterar o primeiro parametro.
 
-### components
+## components
 
 Contem os componentes ou blocos de construção de cada parte da aplicação
 
+### CSS e estilização
 
-## CSS e estilização
-
-### padrao de projeto
+## padrao de projeto
 
 O nome das classes foi pensado da seguinte maneira "'nome-bloco__texto' ou 'nome-bloco__paragrafo-container'",
 
@@ -47,23 +44,20 @@ o nome do elemento vem antes dos underlines e o nome do elemento vem depois dos 
 -> Esse padrão é algo parecido com o BEM.
 
 
-## tecnologias
+# tecnologias
 
-### React
+## React
 
 Utilizei o react para treinar minhas habilidades e reforçãr os cursos que tenho feito sobre essa biblioteca.
 
-### React-dom-router
+## React-dom-router
 
 Tinha um pouco de dificuldades em aprender o router mas depois desse projeto, minhas duvidas diminuiram e aprendi bem mais
 sobre o ROUTER do que eu esperava.
 
-### css
+## css
 
 Sobre o css, eu tentei utilizar o maximo possivel, só utilizando o javascript quando não encontrasse de fato uma soluçao com o css.
-
---- Documentação ---
-
 
 # Getting Started with Create React App
 
