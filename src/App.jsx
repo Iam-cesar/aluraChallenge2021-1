@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-// // import fileSaver
-// import { saveAs } from 'file-saver';
-// // import dom-to-img
-// import DomToImage from 'dom-to-image';
+// import dom-to-image
+import DomToImage from 'dom-to-image';
+// import saveAs
+import { saveAs } from 'file-saver';
 // highlight
 import hljs from 'highlight.js/lib/core';
 // import da linguagem highlight.js
@@ -60,7 +60,6 @@ function App() {
   const [projeto, setProjeto] = useLocalStorage('projeto', [])
 
   useEffect(() => {
-
     document.addEventListener('click', (event) => {
       // responsavel por fechar o menu mobile quando clicado fora ou quando seleciona um item
       const element = document.querySelector('.nav__img-menu-container');
@@ -124,7 +123,7 @@ function App() {
                 fnHighlight={() => handleHighlight(hljs)}
                 borderColor={borderColor}
                 color={() => handleColor(setBorderColor)}
-                exportar={() => exportar()}
+                exportar={() => exportar(DomToImage, saveAs)}
               />}
             />
 

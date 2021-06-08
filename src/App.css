@@ -1,19 +1,19 @@
 :root{
-  --bg-primary-color: #051d3b;
-  --bg-editor: #141414;
-  --border-color-editor: #6BD1FF;
-  --text-color-white: #ffffff;
-  --inner-input-color: #ffffff29;
-  --mobile-menu: #2D415B;
-  --text-color-black: #000000;
-  --botao-color: #5081FB;
+  --bg-primary-color: hsl(213, 84%, 13%);
+  --bg-editor: hsl(0, 0%, 8%);
+  --border-color-editor: hsl(220, 96%, 79%) ;
+  --text-color-white: hsl(0, 0%, 100%);
+  --inner-input-color: hsla(0, 0%, 100%, 0.161);
+  --mobile-menu: hsl(214, 34%, 27%);
+  --text-color-black: hsl(0, 0%, 0%);
+  --botao-color: hsl(223, 96%, 65%);
   --border-radius: 8px;
-  --dot-color-red: #FF5F56;
-  --dot-color-yellow: #FFBD2E;
-  --dot-color-green: #27C93F;
+  --dot-color-red: hsl(3, 100%, 67%);
+  --dot-color-yellow: hsl(41, 100%, 59%);
+  --dot-color-green: hsl(129, 68%, 47%);
   --color-button-highlight: rgba(80, 129, 251, 0.08);
-  --color-save-button: #5081FB;
-  --color-like-iteration: #F65151;
+  --color-save-button: hsl(223, 96%, 65%);
+  --color-like-iteration: hsl(0, 90%, 64%);
 }
 
 html{
