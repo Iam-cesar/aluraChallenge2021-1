@@ -6,7 +6,7 @@ import MenuProjeto from '../../components/menu-projeto';
 import MenuPersonalizacao from '../../components/menu-personalizacao';
 import BotaoHighlight from '../../components/botao-highlight'
 
-const Editor = ({ color, borderColor, fnHighlight, salvar, defaultColor, exportar}) => {
+const Editor = ({ color, borderColor, fnHighlight, salvar, defaultColor, exportar }) => {
   return (
     <>
       <div className='main__wrapper'>

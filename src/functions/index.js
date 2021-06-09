@@ -54,14 +54,14 @@ const handleState = (state, setState) => {
   let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
 
   // se algum dos campos for vazio nao salvara o card
-  if (texto.innerText !== '' || titulo.value !== '' || descricao.value !== '') {
+  if (texto.innerText !== '' && titulo.value !== '' && descricao.value !== '') {
     setState([{
       textValue: `${texto.innerText}`,
       titulo: `${titulo.value}`,
       descricao: `${descricao.value}`,
       bgColor: `${colorPicker.value}`,
-    }, ...state])
     // "...state" faz com que os mais recentes apareçam primeiro
+    }, ...state])
   }
 
   // reseta os campos ao clicar em salvar depois que o state é alterado

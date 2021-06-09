@@ -33,7 +33,7 @@ const MenuPrincipal = ({ children, className }) => {
 
         <NavLink
           onClick={() => {
-            setTimeout(()=>{
+            setTimeout(() => {
               hljs.highlightAll()
             }, 100)
           }}
