@@ -50,7 +50,7 @@ o nome do elemento vem antes dos underlines e o nome do elemento vem depois dos 
 
 Utilizei o react para treinar minhas habilidades e reforçãr os cursos que tenho feito sobre essa biblioteca.
 
-## React-dom-router
+## React-router-dom
 
 Tinha um pouco de dificuldades em aprender o router mas depois desse projeto, minhas duvidas diminuiram e aprendi bem mais
 sobre o ROUTER do que eu esperava.

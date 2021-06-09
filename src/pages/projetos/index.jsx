@@ -17,7 +17,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
             key={index}
           >
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <TextEditor bgColor={item.bgColor} className='projetos__textarea' textValue={item.textValue ?? ''} />
+              <TextEditor  bgColor={item.bgColor} className='projetos__textarea' textValue={item.textValue ?? ''} />
             </Link>
 
             <div className='projetos__info'>

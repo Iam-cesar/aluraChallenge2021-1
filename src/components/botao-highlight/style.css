@@ -24,7 +24,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: var(--text-color-white);
   font-size: 1.1rem;
   opacity: .7;

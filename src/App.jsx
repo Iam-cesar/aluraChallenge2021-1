@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 // import dom-to-image
 import DomToImage from 'dom-to-image';
-// import saveAs
+// import fileSaver
 import { saveAs } from 'file-saver';
 // highlight
 import hljs from 'highlight.js/lib/core';
@@ -116,7 +116,7 @@ function App() {
           </div>
 
           <Switch>
-            <Route path="/" exact children={
+            <Route path='/' exact children={
               <Editor
                 defaultColor={borderColor}
                 salvar={() => handleState(projeto, setProjeto)}
