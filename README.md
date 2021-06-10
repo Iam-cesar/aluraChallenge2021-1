@@ -9,36 +9,36 @@ No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
 
 # modularização
 
-├───assets
-│   ├───fonts
-│   └───img
-├───components
-│   ├───botao
-│   ├───botao-highlight
-│   ├───Img
-│   ├───input
-│   ├───logo
-│   ├───main
-│   ├───menu
-│   ├───menu-mobile
-│   ├───menu-personalizacao
-│   ├───menu-principal
-│   ├───menu-projeto
-│   ├───navbar
-│   ├───perfil
-│   ├───search-bar
-│   ├───searchbar-mobile
-│   ├───social-media
-│   ├───text-editor
-│   ├───textarea
-│   ├───title-menu
-│   └───usuario
-├───functions
-├───hooks
-└───pages
-    ├───editar
-    ├───editor
-    └───projetos
+├───assets<br />
+│   ├───fonts<br />
+│   └───img<br />
+├───components<br />
+│   ├───botao<br />
+│   ├───botao-highlight<br />
+│   ├───Img<br />
+│   ├───input<br />
+│   ├───logo<br />
+│   ├───main<br />
+│   ├───menu<br />
+│   ├───menu-mobile<br />
+│   ├───menu-personalizacao<br />
+│   ├───menu-principal<br />
+│   ├───menu-projeto<br />
+│   ├───navbar<br />
+│   ├───perfil<br />
+│   ├───search-bar<br />
+│   ├───searchbar-mobile<br />
+│   ├───social-media<br />
+│   ├───text-editor<br />
+│   ├───textarea<br />
+│   ├───title-menu<br />
+│   └───usuario<br />
+├───functions<br />
+├───hooks<br />
+└───pages<br />
+    ├───editar<br />
+    ├───editor<br />
+    └───projetos<br />
 
 ## pages
 
