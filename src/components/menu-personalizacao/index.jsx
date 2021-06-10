@@ -3,15 +3,26 @@ import './style.css';
 import Menu from '../menu';
 import TitleMenu from '../title-menu';
 import Button from '../botao';
+import { Link } from 'react-router-dom';
 
-const MenuPersonalizacao = ({ color, optionBtn, defaultColor, editar, salvar}) => {
+const MenuPersonalizacao = ({ color, optionBtn, defaultColor, editar, salvar }) => {
 
   const options = ['javascript', 'python', 'C', 'php'];
-  const [textoBotaoSalvar, textoBotaoEditar] = ['Salvar projeto', 'Editar projeto'];
+
+  // outro metodo de adicionar os valores dos botões de confirmação e edição, agora esta no css
+  // const [textoBotaoSalvar, textoBotaoEditar] = ['Salvar projeto', 'Editar projeto'];
 
   const optionButton = {
-    'salvar': <span onClick={() => salvar()}>{textoBotaoSalvar}</span>,
-    'editar': <span onClick={() => editar()}>{textoBotaoEditar}</span>,
+    'salvar':
+      <Button className='menu-personalizacao__botao-salvar' >
+        <span onClick={() => salvar()}></span>
+      </Button>,
+    'editar':
+      <Link to='/projetos'>
+        <Button className='menu-personalizacao__botao-salvar' >
+          <span onClick={() => editar()}></span>
+        </Button>,
+      </Link>
   }
 
 
@@ -30,9 +41,7 @@ const MenuPersonalizacao = ({ color, optionBtn, defaultColor, editar, salvar}) =
           <input type='color' className='menu-personalizacao__color-picker' defaultValue={defaultColor} onClick={() => color()} />
         </div>
       </div>
-      <Button className='menu-personalizacao__botao-salvar' >
-        {optionButton[`${optionBtn}`]}
-      </Button>
+      {optionButton[optionBtn]}
     </Menu>
   );
 };
