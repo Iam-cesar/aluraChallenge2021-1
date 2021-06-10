@@ -3,7 +3,7 @@ import './style.css';
 
 const Button = ({children, className, type}) => {
   return (
-    <button type={type} className={className}>
+    <button title='botao' type={type} className={className}>
       {children}
     </button>
   );

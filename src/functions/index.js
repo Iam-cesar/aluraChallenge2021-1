@@ -68,6 +68,7 @@ const handleState = (state, setState) => {
   let titulo = document.querySelector('.menu-projeto__input')
   let descricao = document.querySelector('.menu-projeto__descricao')
   let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
+  let botaoSalvar = document.querySelector('.menu-personalizacao__botao-salvar')
 
   // se algum dos campos for vazio nao salvara o card
   if (texto.innerText !== '' && titulo.value !== '' && descricao.value !== '') {
@@ -78,12 +79,19 @@ const handleState = (state, setState) => {
       bgColor: `${colorPicker.value}`,
       // "...state" faz com que os mais recentes apareçam primeiro
     }, ...state])
+
+    // reseta os campos ao clicar em salvar depois que o state é alterado
+    texto.innerText = ''
+    titulo.value = ''
+    descricao.value = ''
+    botaoSalvar.classList.remove('menu-personalizacao__botao-salvar')
+    botaoSalvar.classList.add('botao__salvar--confirm')
   }
 
-  // reseta os campos ao clicar em salvar depois que o state é alterado
-  texto.innerText = ''
-  titulo.value = ''
-  descricao.value = ''
+  setTimeout(() => {
+    botaoSalvar.classList.remove('botao__salvar--confirm')
+    botaoSalvar.classList.add('menu-personalizacao__botao-salvar')
+  }, 2000)
 }
 
 const handleHighlight = (hljs) => {
