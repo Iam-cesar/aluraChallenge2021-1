@@ -4,11 +4,16 @@ import Menu from '../menu';
 import TitleMenu from '../title-menu';
 import Button from '../botao';
 
-const MenuPersonalizacao = ({ color, salvar, defaultColor }) => {
+const MenuPersonalizacao = ({ color, optionBtn, defaultColor, editar, salvar}) => {
 
   const options = ['javascript', 'python', 'C', 'php'];
+  const [textoBotaoSalvar, textoBotaoEditar] = ['Salvar projeto', 'Editar projeto'];
 
-  const [textoBotaoSalvar] = ['Salvar projeto'];
+  const optionButton = {
+    'salvar': <span onClick={() => salvar()}>{textoBotaoSalvar}</span>,
+    'editar': <span onClick={() => editar()}>{textoBotaoEditar}</span>,
+  }
+
 
   return (
     <Menu className='menu-personalizacao__container'>
@@ -26,7 +31,7 @@ const MenuPersonalizacao = ({ color, salvar, defaultColor }) => {
         </div>
       </div>
       <Button className='menu-personalizacao__botao-salvar' >
-        <span onClick={() => salvar()}>{textoBotaoSalvar}</span>
+        {optionButton[`${optionBtn}`]}
       </Button>
     </Menu>
   );

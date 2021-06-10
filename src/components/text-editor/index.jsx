@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const textEditor = ({ bgColor, textValue, children }) => {
+const textEditor = ({ bgColor, children, textValue }) => {
 
   return (
     <div style={{ border: `2rem solid ${bgColor}`, backgroundColor: `${bgColor}` }} className="text-editor__container">

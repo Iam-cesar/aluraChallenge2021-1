@@ -22,6 +22,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Component imports
 import Logo from './components/logo';
 import Main from './components/main';
+import Editar from './pages/editar';
 import Navbar from './components/navbar';
 import Perfil from './components/perfil';
 import Usuario from './components/usuario';
@@ -116,9 +117,11 @@ function App() {
           </div>
 
           <Switch>
+            {/* pagina de edição */}
             <Route path='/' exact children={
               <Editor
                 defaultColor={borderColor}
+                optionBtn='salvar'
                 salvar={() => handleState(projeto, setProjeto)}
                 fnHighlight={() => handleHighlight(hljs)}
                 borderColor={borderColor}
@@ -126,7 +129,7 @@ function App() {
                 exportar={() => exportar(DomToImage, saveAs)}
               />}
             />
-
+            {/* pagina com todos os cards */}
             <Route path="/projetos" children={
               <Projetos
                 nomeUsuario={nomeUsuario}
@@ -134,6 +137,19 @@ function App() {
                 projetos={projeto}
                 like={event => handleLike(event)}
                 apagar={event => apagarCard(event, projeto, setProjeto)}
+              />}
+            />
+            {/* pagina de atualização dos cards */}
+            <Route path='/editor/:id' children={
+              <Editar
+                state={projeto}
+                setState={setProjeto}
+                defaultColor={borderColor}
+                optionBtn='editar'
+                fnHighlight={() => handleHighlight(hljs)}
+                borderColor={borderColor}
+                color={() => handleColor(setBorderColor)}
+                exportar={() => exportar(DomToImage, saveAs)}
               />}
             />
           </Switch>

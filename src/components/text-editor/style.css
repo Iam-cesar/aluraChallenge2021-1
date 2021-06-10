@@ -58,7 +58,6 @@
 .text-editor{
   display: block;
   padding: 10px;
-  /* border-radius: 7px; */
   height: 100%;
   background-color: var(--bg-editor);
   color: var(--text-color-white);
@@ -70,6 +69,7 @@
 code{
   width: 100%;
   white-space: pre-wrap;
+  word-break: break-all;
 }
 
 .hljs{

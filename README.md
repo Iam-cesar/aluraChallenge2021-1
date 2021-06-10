@@ -9,7 +9,36 @@ No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
 
 # modularização
 
-No projetos existem quatro pastas principais: pages, hooks, components e functions.
+├───assets
+│   ├───fonts
+│   └───img
+├───components
+│   ├───botao
+│   ├───botao-highlight
+│   ├───Img
+│   ├───input
+│   ├───logo
+│   ├───main
+│   ├───menu
+│   ├───menu-mobile
+│   ├───menu-personalizacao
+│   ├───menu-principal
+│   ├───menu-projeto
+│   ├───navbar
+│   ├───perfil
+│   ├───search-bar
+│   ├───searchbar-mobile
+│   ├───social-media
+│   ├───text-editor
+│   ├───textarea
+│   ├───title-menu
+│   └───usuario
+├───functions
+├───hooks
+└───pages
+    ├───editar
+    ├───editor
+    └───projetos
 
 ## pages
 

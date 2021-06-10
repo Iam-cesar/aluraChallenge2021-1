@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-
 // components
 import SocialMedia from '../../components/social-media';
 import TextEditor from '../../components/text-editor';
 
 const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apagar }) => {
+
   return (
     <div className='projetos__container'>{
       projetos.map((item, index) => {
@@ -16,8 +16,8 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
             className='projetos__item'
             key={index}
           >
-            <Link to='/' style={{ textDecoration: 'none' }}>
-              <TextEditor  bgColor={item.bgColor} className='projetos__textarea' textValue={item.textValue ?? ''} />
+            <Link to={`/editor/${index}`} style={{ textDecoration: 'none' }}>
+              <TextEditor bgColor={item.bgColor} className='projetos__textarea' textValue={item.textValue ?? ''} />
             </Link>
 
             <div className='projetos__info'>
