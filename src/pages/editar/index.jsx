@@ -1,17 +1,21 @@
 import React from 'react';
 import './style.css';
+import { useParams } from 'react-router-dom';
 
 import TextEditor from '../../components/text-editor';
 import MenuProjeto from '../../components/menu-projeto';
 import MenuPersonalizacao from '../../components/menu-personalizacao';
 import BotaoHighlight from '../../components/botao-highlight'
+import { editar } from '../../functions';
 
-const Editor = ({ color, borderColor, fnHighlight, salvar, defaultColor, exportar, optionBtn }) => {
+const Editar = ({ color, fnHighlight, exportar, optionBtn, state, setState }) => {
+
+  const { id } = useParams()
 
   return (
     <>
       <div className='main__wrapper'>
-        <TextEditor bgColor={borderColor}>
+        <TextEditor textValue={state[id].textValue} state={state} bgColor={state[id].bgColor} id={id ? parseInt(id) : null} >
           <div className="text-editor__exportar">
             <select className="text-editor__formatos-exportar" name="formatos" id="formatos">
               <option value="jpg">JPG</option>
@@ -24,11 +28,11 @@ const Editor = ({ color, borderColor, fnHighlight, salvar, defaultColor, exporta
         <BotaoHighlight fnHighlight={fnHighlight} />
       </div>
       <div className='side__wrapper'>
-        <MenuProjeto />
-        <MenuPersonalizacao optionBtn={optionBtn} defaultColor={defaultColor} salvar={salvar} color={color} />
+        <MenuProjeto editarCardDescricao={state[id].descricao} editarCardTitulo={state[id].titulo} />
+        <MenuPersonalizacao optionBtn={optionBtn} editar={() => editar(id, state, setState)} defaultColor={state[id].bgColor} color={color} />
       </div>
     </>
   );
 }
 
-export default Editor;
+export default Editar;

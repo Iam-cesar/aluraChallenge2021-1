@@ -1,3 +1,19 @@
+const editar = (id, state, setState) => {
+  let texto = document.querySelector('.text-editor')
+  let titulo = document.querySelector('.menu-projeto__input')
+  let descricao = document.querySelector('.menu-projeto__descricao')
+  let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
+  // faz com que o card com o id recebido receba os novos valores do editor
+  state[id] = {
+    textValue: texto.innerText,
+    titulo: titulo.value,
+    descricao: descricao.value,
+    bgColor: colorPicker.value
+  }
+  // grava no estado o novo card atualizado
+  setState(state)
+}
+
 const exportar = (moduleDTI, saveAs) => {
   let formato = document.querySelector('.text-editor__formatos-exportar')
   let node = document.querySelector('.text-editor__container')
@@ -18,7 +34,7 @@ const exportar = (moduleDTI, saveAs) => {
       break
 
     case 'jpg':
-      moduleDTI.toJpeg(node, {quality: 0.9})
+      moduleDTI.toJpeg(node, { quality: 0.9 })
         .then(dataUrl => saveAs(dataUrl, 'my-code.jpg'))
       break
 
@@ -60,7 +76,7 @@ const handleState = (state, setState) => {
       titulo: `${titulo.value}`,
       descricao: `${descricao.value}`,
       bgColor: `${colorPicker.value}`,
-    // "...state" faz com que os mais recentes apareçam primeiro
+      // "...state" faz com que os mais recentes apareçam primeiro
     }, ...state])
   }
 
@@ -132,4 +148,5 @@ export {
   handleLike,
   apagarCard,
   exportar,
+  editar,
 }
