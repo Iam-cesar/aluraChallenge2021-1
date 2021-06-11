@@ -1,5 +1,7 @@
 Projeto "desafio front-end #aluradev";
 
+# projeto online: https://alurachallenge2021.herokuapp.com/
+
 # como rodar localmente
 
 primeiro faça o download do projeto para ser computador,
