@@ -38,9 +38,9 @@ No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
 ├───functions<br />
 ├───hooks<br />
 └───pages<br />
-    ├───editar<br />
-    ├───editor<br />
-    └───projetos<br />
+|    ├───editar<br />
+|    ├───editor<br />
+|    └───projetos<br />
 
 ## pages
 
