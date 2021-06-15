@@ -10,7 +10,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
 
   return (
     <div className='projetos__container'>{
-      projetos.map((item, index) => {
+      projetos ? projetos.map((item, index) => {
         return (
           <div
             className='projetos__item'
@@ -30,7 +30,9 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
             </div>
           </div>
         );
-      })
+        
+      }) : 
+      'Vazio'
     }</div>
   )
 };
