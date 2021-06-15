@@ -32,7 +32,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, likesContador, apaga
         );
         
       }) : 
-      'Vazio'
+      ''
     }</div>
   )
 };
