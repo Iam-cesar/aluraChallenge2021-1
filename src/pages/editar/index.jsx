@@ -8,7 +8,7 @@ import MenuPersonalizacao from '../../components/menu-personalizacao';
 import BotaoHighlight from '../../components/botao-highlight'
 import { editar } from '../../functions';
 
-const Editar = ({ color, fnHighlight, exportar, optionBtn, state, setState }) => {
+const Editar = ({ color, fnHighlight, exportar, optionBtn, state, setState, temas }) => {
 
   const { id } = useParams()
 
@@ -29,7 +29,7 @@ const Editar = ({ color, fnHighlight, exportar, optionBtn, state, setState }) =>
       </div>
       <div className='side__wrapper'>
         <MenuProjeto editarCardDescricao={state[id].descricao} editarCardTitulo={state[id].titulo} />
-        <MenuPersonalizacao optionBtn={optionBtn} editar={() => editar(id, state, setState)} defaultColor={state[id].bgColor} color={color} />
+        <MenuPersonalizacao temas={temas} optionBtn={optionBtn} editar={() => editar(id, state, setState)} defaultColor={state[id].bgColor} color={color} />
       </div>
     </>
   );
