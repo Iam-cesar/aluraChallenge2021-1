@@ -84,11 +84,13 @@ const handleState = (state, setState) => {
     texto.innerText = ''
     titulo.value = ''
     descricao.value = ''
+    // adiciona cor verde e texto "salvo"
     botaoSalvar.classList.remove('menu-personalizacao__botao-salvar')
     botaoSalvar.classList.add('botao__salvar--confirm')
   }
 
   setTimeout(() => {
+    // retorna aos valores padrao
     botaoSalvar.classList.remove('botao__salvar--confirm')
     botaoSalvar.classList.add('menu-personalizacao__botao-salvar')
   }, 2000)

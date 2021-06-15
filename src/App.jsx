@@ -32,7 +32,7 @@ import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
 import SearchBarMobile from './components/searchbar-mobile';
 // pages
-import Editor from './pages/editor';
+import Index from './pages/index';
 import Projetos from './pages/projetos';
 // funções
 import {
@@ -119,7 +119,7 @@ function App() {
           <Switch>
             {/* pagina de edição */}
             <Route path='/' exact children={
-              <Editor
+              <Index
                 defaultColor={borderColor}
                 optionBtn='salvar'
                 salvar={() => handleState(projeto, setProjeto)}
@@ -135,7 +135,7 @@ function App() {
                 nomeUsuario={nomeUsuario}
                 PerfilImg={PerfilImg}
                 projetos={projeto}
-                like={event => handleLike(event)}
+                like={(event) => handleLike(event)}
                 apagar={event => apagarCard(event, projeto, setProjeto)}
               />}
             />

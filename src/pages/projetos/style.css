@@ -6,6 +6,13 @@
     margin-bottom: 10rem;
 }
 
+.projetos__length-zero{
+    color: white;
+    width: 75%;
+    font-size: 2rem;
+    filter: opacity(.7);
+}
+
 .projetos__item {
     width: 48%;
     height: max-content;
