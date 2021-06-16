@@ -41,7 +41,7 @@ No terminal use yarn start (caso tenhao yarn instalado) ou npm start.
 ├───hooks<br />
 └───pages<br />
 |    ├───editar<br />
-|    ├───editor<br />
+|    ├───index<br />
 |    └───projetos<br />
 
 ## pages
