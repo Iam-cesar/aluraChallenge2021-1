@@ -54,7 +54,7 @@ Contem as funçoes que foram utilizadas, cada função tem sua descrição comen
 
 ## hooks customizados
 
-Contem os hooks utilizados, tambem comentado destro do seu proprio corpo
+Contem os hooks utilizados, tambem comentado dentro do seu proprio corpo
 
 ### UseLocalStorage
 
