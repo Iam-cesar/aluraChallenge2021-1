@@ -1,6 +1,7 @@
 .text-editor__exportar {
   height: 100%;
   width: 8rem;
+  z-index: 1;
 }
 
 .text-editor__formatos-exportar {
