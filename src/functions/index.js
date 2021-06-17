@@ -103,7 +103,7 @@ const handleHighlight = (hljs) => {
   let codigo = areaCodigo.querySelector('code');
   areaCodigo.innerHTML = `<code class="text-editor language-${linguagem.value}" contentEditable='true' aria-label='editor'></code>`;
 
-  areaCodigo.firstChild.innerText = codigo.innerText;
+  areaCodigo.firstChild.innerHTML = codigo.innerHTML;
 
   hljs.configure({
     languages: ['javascript', 'python', 'php', 'c'],
