@@ -1,7 +1,5 @@
 Projeto "desafio front-end #aluradev";
 
-## projeto online heroku: https://alurachallenge2021.herokuapp.com/
-
 ## projeto online netlify: https://aluradev.netlify.app/
 
 # como rodar localmente
