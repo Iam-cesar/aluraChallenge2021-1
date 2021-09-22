@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 
-// images
 import { ReactComponent as Like } from '../../assets/img/likes.svg';
 import { ReactComponent as Coments } from '../../assets/img/coments.svg';
 
@@ -18,7 +17,7 @@ const SocialMedia = ({ PerfilImg, nomeUsuario, like, id }) => {
           <span className='projetos__contador'>0</span>
         </div>
 
-        <div id={id} className='projetos__container-interacoes like' onClick={(event) => like({id, event})}>
+        <div id={id} className='projetos__container-interacoes like' onClick={(event) => like({ id, event })}>
           <Like className='projetos__like-icon'></Like>
           <span className='projetos__contador projetos__contador-likes'>0</span>
         </div>

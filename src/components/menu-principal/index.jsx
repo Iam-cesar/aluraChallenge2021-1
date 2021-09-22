@@ -3,9 +3,7 @@ import './style.css';
 import Menu from '../menu';
 import Img from '../Img';
 
-// router
 import { NavLink } from 'react-router-dom';
-// highlight.js
 import hljs from 'highlight.js/lib/core.js';
 
 import { ReactComponent as ImgCodeOff } from '../../assets/img/codeoff.svg';

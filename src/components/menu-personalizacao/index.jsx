@@ -28,7 +28,6 @@ const MenuPersonalizacao = ({ color, optionBtn, defaultColor, editar, salvar }) 
       <TitleMenu text='PERSONALIZACAO' className='menu-personalizacao__title' />
       <div className='personalizacao__options-selecao'>
 
-        {/* select das linguagens */}
         <select className='menu-personalizacao__options' >
           {options.map((linguagem, index) => {
             return (

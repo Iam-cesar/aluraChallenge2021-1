@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-// components
 import SocialMedia from '../../components/social-media';
 import TextEditor from '../../components/text-editor';
 
@@ -13,7 +12,7 @@ const Projetos = ({ projetos, nomeUsuario, PerfilImg, like, apagar }) => {
 
       <h1 className='projetos__length-zero'>Parece que você ainda não adicionou nenhum projeto</h1>
       :
-      
+
       <div className='projetos__container'>{
         projetos.map((item, index) => {
           return (

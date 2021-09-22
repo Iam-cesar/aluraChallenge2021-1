@@ -22,13 +22,11 @@ import TitleMenu from './components/title-menu';
 import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
 import SearchBarMobile from './components/searchbar-mobile';
-import Index from './pages/index';
+import Home from './pages/home/index';
 import Projetos from './pages/projetos';
 import {
   handleColor,
   handleHighlight,
-  handleMenu,
-  handleSeachBar,
   handleState,
   handleLike,
   apagarCard,
@@ -39,12 +37,10 @@ hljs.registerLanguage('php', php);
 hljs.registerLanguage('c', c);
 hljs.registerLanguage('python', python);
 
-function App() {
+function App () {
 
   const [nomeUsuario] = useState('Cesar Augusto');
   const [borderColor, setBorderColor] = useState('#6BD1FF');
-  const [menu, setMenu] = useState(false);
-  const [search, setSearch] = useState(false);
   const [projeto, setProjeto] = useLocalStorage('projeto', [])
 
   useEffect(() => {
@@ -69,7 +65,7 @@ function App() {
       }
     })
 
-    hljs.highlightAll()
+    hljs.highlightAll();
   });
 
   return (
@@ -78,14 +74,12 @@ function App() {
         <Navbar>
           <Logo />
           <SeachBar />
+
           <div className="nav__icon-wrapper">
-
-            <SearchBarMobile open={() => { handleSeachBar(search, setSearch) }} />
-
-            <Perfil className="nav__perfil-container" open={() => handleMenu(menu, setMenu)}>
-              <Usuario className='nav__perfil-usuario' nomeUsuario={nomeUsuario} imgPerfil={PerfilImg} />
+            <SearchBarMobile />
+            <Perfil className="nav__perfil-container" >
+              <Usuario className='nav__perfil-usuario' />
             </Perfil>
-
           </div>
 
           <MenuMobile nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
@@ -101,7 +95,7 @@ function App() {
 
           <Switch>
             <Route path='/' exact children={
-              <Index
+              <Home
                 defaultColor={borderColor}
                 optionBtn='salvar'
                 salvar={() => handleState(projeto, setProjeto)}
