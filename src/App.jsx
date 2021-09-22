@@ -1,25 +1,16 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-// import dom-to-image
 import DomToImage from 'dom-to-image';
-// import fileSaver
 import { saveAs } from 'file-saver';
-// highlight
 import hljs from 'highlight.js/lib/core';
-// import da linguagem highlight.js
 import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
 import c from 'highlight.js/lib/languages/c';
 import python from 'highlight.js/lib/languages/python';
-// css theme highlight.js
 import 'highlight.js/styles/lioshi.css';
-// image imports
 import PerfilImg from './assets/img/perfil.jpg';
-// hook para local Storage
 import useLocalStorage from './hooks/useLocalStorage.js';
-// router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// Component imports
 import Logo from './components/logo';
 import Main from './components/main';
 import Editar from './pages/editar';
@@ -31,10 +22,8 @@ import TitleMenu from './components/title-menu';
 import MenuMobile from './components/menu-mobile';
 import MenuPrincipal from './components/menu-principal';
 import SearchBarMobile from './components/searchbar-mobile';
-// pages
 import Index from './pages/index';
 import Projetos from './pages/projetos';
-// funções
 import {
   handleColor,
   handleHighlight,
@@ -45,7 +34,6 @@ import {
   apagarCard,
   exportar,
 } from './functions';
-// registrando as linguagens
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('php', php);
 hljs.registerLanguage('c', c);
@@ -53,7 +41,6 @@ hljs.registerLanguage('python', python);
 
 function App() {
 
-  // variaveis
   const [nomeUsuario] = useState('Cesar Augusto');
   const [borderColor, setBorderColor] = useState('#6BD1FF');
   const [menu, setMenu] = useState(false);
@@ -62,7 +49,6 @@ function App() {
 
   useEffect(() => {
     document.addEventListener('click', (event) => {
-      // responsavel por fechar o menu mobile quando clicado fora ou quando seleciona um item
       const element = document.querySelector('.nav__img-menu-container');
       const menuMobile = document.querySelector('.menu-mobile__container');
 
@@ -71,7 +57,6 @@ function App() {
         menuMobile.classList.remove('menu-mobile__show-menu');
       }
 
-      // responsavel por fechar a barra de pesquisa quando clicar fora
       const navbar = document.querySelector('.nav__search-container');
       const input = document.querySelector('.nav__search');
       const logo = document.querySelector('.nav__logo-container');
@@ -84,7 +69,6 @@ function App() {
       }
     })
 
-    // ativa o highlight depois de qualquer alteração na pagina
     hljs.highlightAll()
   });
 
@@ -105,7 +89,6 @@ function App() {
           </div>
 
           <MenuMobile nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
-
         </Navbar>
 
         <Main className='main'>
@@ -117,7 +100,6 @@ function App() {
           </div>
 
           <Switch>
-            {/* pagina de edição */}
             <Route path='/' exact children={
               <Index
                 defaultColor={borderColor}
@@ -129,7 +111,6 @@ function App() {
                 exportar={() => exportar(DomToImage, saveAs)}
               />}
             />
-            {/* pagina com todos os cards */}
             <Route path="/projetos" children={
               <Projetos
                 nomeUsuario={nomeUsuario}
@@ -139,7 +120,6 @@ function App() {
                 apagar={event => apagarCard(event, projeto, setProjeto)}
               />}
             />
-            {/* pagina de atualização dos cards */}
             <Route path='/editor/:id' children={
               <Editar
                 state={projeto}
