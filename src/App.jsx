@@ -21,7 +21,7 @@ import MenuMobile from 'components/Menu-mobile';
 import MenuPrincipal from 'components/Menu-principal';
 import SearchBarMobile from 'components/Searchbar-mobile';
 import Home from 'pages/Home/index';
-import Projetos from 'pages/Projetos';
+import Projetos from 'pages/Projetos'
 import {
   handleColor,
   handleLike,
