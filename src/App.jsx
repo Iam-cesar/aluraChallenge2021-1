@@ -62,53 +62,51 @@ function App () {
   });
 
   return (
-    <>
-      <Router>
-        <Navbar>
-          <Logo />
-          <SeachBar />
-          <div className="nav__icon-wrapper">
-            <SearchBarMobile />
-            <Perfil className="nav__perfil-container" >
-              <Usuario className='nav__perfil-usuario' />
-            </Perfil>
-          </div>
-          <MenuMobile />
-        </Navbar>
-        <Main className='main'>
-          <div className='side__wrapper side__hidden'>
-            <MenuPrincipal hljs={hljs ?? ''}>
-              <TitleMenu text="MENU" />
-            </MenuPrincipal>
-          </div>
-          <Switch>
-            <Route path='/' exact children={
-              <Home
-                defaultColor={borderColor}
-                optionBtn='salvar'
-                borderColor={borderColor}
-                color={() => handleColor(setBorderColor)}
-                exportar={() => exportar(DomToImage, saveAs)}
-              />}
-            />
-            <Route path="/projetos" children={
-              <Projetos
-                like={(event) => handleLike(event)}
-              />}
-            />
-            <Route path='/editor/:id' children={
-              <Editar
-                defaultColor={borderColor}
-                optionBtn='editar'
-                borderColor={borderColor}
-                color={() => handleColor(setBorderColor)}
-                exportar={() => exportar(DomToImage, saveAs)}
-              />}
-            />
-          </Switch>
-        </Main>
-      </Router>
-    </>
+    <Router>
+      <Navbar>
+        <Logo />
+        <SeachBar />
+        <div className="nav__icon-wrapper">
+          <SearchBarMobile />
+          <Perfil className="nav__perfil-container" >
+            <Usuario className='nav__perfil-usuario' />
+          </Perfil>
+        </div>
+        <MenuMobile />
+      </Navbar>
+      <Main className='main'>
+        <div className='side__wrapper side__hidden'>
+          <MenuPrincipal hljs={hljs ?? ''}>
+            <TitleMenu text="MENU" />
+          </MenuPrincipal>
+        </div>
+        <Switch>
+          <Route path='/' exact children={
+            <Home
+              defaultColor={borderColor}
+              optionBtn='salvar'
+              borderColor={borderColor}
+              color={() => handleColor(setBorderColor)}
+              exportar={() => exportar(DomToImage, saveAs)}
+            />}
+          />
+          <Route path="/projetos" children={
+            <Projetos
+              like={(event) => handleLike(event)}
+            />}
+          />
+          <Route path='/editor/:id' children={
+            <Editar
+              defaultColor={borderColor}
+              optionBtn='editar'
+              borderColor={borderColor}
+              color={() => handleColor(setBorderColor)}
+              exportar={() => exportar(DomToImage, saveAs)}
+            />}
+          />
+        </Switch>
+      </Main>
+    </Router>
   );
 }
 
