@@ -10,7 +10,7 @@ import python from 'highlight.js/lib/languages/python';
 import 'highlight.js/styles/dracula.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from 'components/Main';
-import Logo from 'components/Logo';
+// import Logo from 'components/Logo';
 import Editar from 'pages/Editar';
 import Navbar from 'components/Navbar';
 import Perfil from 'components/Perfil';
@@ -64,7 +64,7 @@ function App () {
   return (
     <Router>
       <Navbar>
-        <Logo />
+        {/* <Logo /> */}
         <SeachBar />
         <div className="nav__icon-wrapper">
           <SearchBarMobile />
