@@ -59,7 +59,7 @@
   }
 
   .nav__img-menu-container{    
-    background: url('assets/svg/menu-open.svg') no-repeat center;
+    background: url('../../assets/svg/menu-open.svg') no-repeat center;
     min-width: 3rem;
     height: 3rem;
   }
@@ -69,7 +69,7 @@
   }
 
   .menu__is-active{
-    background: url('assets/svg/menu-closed.svg') no-repeat center;
+    background: url('../../assets/svg/menu-closed.svg') no-repeat center;
     transition: ease-in-out 200ms;
   }
 

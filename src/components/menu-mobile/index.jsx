@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
 
-import MenuPrincipal from 'components/Menu-principal';
-import Perfil from 'components/Perfil';
-import Usuario from 'components/Usuario';
+import MenuPrincipal from '../../components/Menu-principal';
+import Perfil from '../../components/Perfil';
+import Usuario from '../../components/Usuario';
 
 const MenuMobile = ({ nomeUsuario, PerfilImg }) => {
   return (

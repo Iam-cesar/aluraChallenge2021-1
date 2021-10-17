@@ -9,19 +9,19 @@ import c from 'highlight.js/lib/languages/c';
 import python from 'highlight.js/lib/languages/python';
 import 'highlight.js/styles/dracula.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from 'components/Main';
-// import Logo from 'components/Logo';
-import Editar from 'pages/Editar';
-import Navbar from 'components/Navbar';
-import Perfil from 'components/Perfil';
-import Usuario from 'components/Usuario';
-import SeachBar from 'components/Search-bar';
-import TitleMenu from 'components/Title-menu';
-import MenuMobile from 'components/Menu-mobile';
-import MenuPrincipal from 'components/Menu-principal';
-import SearchBarMobile from 'components/Searchbar-mobile';
-import Home from 'pages/Home/index';
-import Projetos from 'pages/Projetos';
+import Main from './components/Main';
+import Logo from './components/Logo';
+import Editar from './pages/Editar';
+import Navbar from './components/Navbar';
+import Perfil from './components/Perfil';
+import Usuario from './components/Usuario';
+import SeachBar from './components/Search-bar';
+import TitleMenu from './components/Title-menu';
+import MenuMobile from './components/Menu-mobile';
+import MenuPrincipal from './components/Menu-principal';
+import SearchBarMobile from './components/Searchbar-mobile';
+import Home from './pages/Home/index';
+import Projetos from './pages/Projetos';
 import {
   handleColor,
   handleLike,
@@ -64,7 +64,7 @@ function App () {
   return (
     <Router>
       <Navbar>
-        {/* <Logo /> */}
+        <Logo />
         <SeachBar />
         <div className="nav__icon-wrapper">
           <SearchBarMobile />

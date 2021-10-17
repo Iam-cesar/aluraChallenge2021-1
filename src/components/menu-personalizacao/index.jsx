@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import './style.css';
-import Menu from 'components/Menu';
-import TitleMenu from 'components/Title-menu';
-import Button from 'components/Botao';
+import Menu from '../../components/Menu';
+import TitleMenu from '../../components/Title-menu';
+import Button from '../../components/Botao';
 import { Link } from 'react-router-dom';
-import { ProjectsContext } from 'context/projects';
+import { ProjectsContext } from '../../context/projects';
 
 const MenuPersonalizacao = ({ color, optionBtn, defaultColor }) => {
 

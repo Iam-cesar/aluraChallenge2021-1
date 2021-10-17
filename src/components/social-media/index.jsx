@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
-import { useUser } from 'hooks/useUser';
-import { ReactComponent as Like } from 'assets/svg/likes.svg';
-import { ReactComponent as Coments } from 'assets/svg/coments.svg';
+import { useUser } from '../../hooks/useUser';
+import { ReactComponent as Like } from '../../assets/svg/likes.svg';
+import { ReactComponent as Coments } from '../../assets/svg/coments.svg';
 
 
 const SocialMedia = ({ like, id }) => {

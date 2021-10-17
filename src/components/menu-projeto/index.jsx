@@ -1,8 +1,8 @@
 import React from 'react';
 import "./style.css";
-import Menu from 'components/Menu';
-import TitleMenu from 'components/Title-menu';
-import TextArea from 'components/Textarea';
+import Menu from '../../components/Menu';
+import TitleMenu from '../../components/Title-menu';
+import TextArea from '../../components/Textarea';
 
 const MenuProjeto = ({ editarCardTitulo, editarCardDescricao }) => {
 
