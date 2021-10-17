@@ -4,7 +4,9 @@ import './style.css';
 const textEditor = ({ bgColor, children, textValue }) => {
 
   return (
-    <div style={{ border: `2rem solid ${bgColor}`, backgroundColor: `${bgColor}` }} className="text-editor__container">
+    <div
+      style={{ border: `2rem solid ${bgColor}`, backgroundColor: `${bgColor}` }}
+      className="text-editor__container">
       <div className="text-editor__background">
         <div className="text-editor__dots-export-container">
           <div className="text-editor__dots">
@@ -15,7 +17,13 @@ const textEditor = ({ bgColor, children, textValue }) => {
           {children}
         </div>
         <pre className="text-editor__text-codigo-wrapper">
-          <code className="text-editor" suppressContentEditableWarning={true} contentEditable='true' aria-label='editor' >{textValue}</code>
+          <code
+            className="text-editor"
+            suppressContentEditableWarning={true}
+            contentEditable='true'
+            aria-label='editor' >
+            {textValue}
+          </code>
         </pre>
       </div>
     </div>

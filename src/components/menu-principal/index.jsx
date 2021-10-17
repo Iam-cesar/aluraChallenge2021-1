@@ -1,13 +1,12 @@
 import React from 'react';
 import './style.css';
-import Menu from '../menu';
-import Img from '../Img';
+import Menu from 'components/Menu';
+import Img from 'components/Image';
 
 import { NavLink } from 'react-router-dom';
-import hljs from 'highlight.js/lib/core.js';
 
-import { ReactComponent as ImgCodeOff } from '../../assets/img/codeoff.svg';
-import { ReactComponent as ImgUsers } from '../../assets/img/users.svg';
+import { ReactComponent as ImgCodeOff } from 'assets/svg/codeoff.svg';
+import { ReactComponent as ImgUsers } from 'assets/svg/users.svg';
 
 const MenuPrincipal = ({ children, className }) => {
 
@@ -30,11 +29,6 @@ const MenuPrincipal = ({ children, className }) => {
         </NavLink>
 
         <NavLink
-          onClick={() => {
-            setTimeout(() => {
-              hljs.highlightAll()
-            }, 100)
-          }}
           activeClassName={'menu__botao-container-hover'}
           className="menu__link menu__botao-container"
           to='/projetos'

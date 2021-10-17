@@ -7,29 +7,24 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
 import c from 'highlight.js/lib/languages/c';
 import python from 'highlight.js/lib/languages/python';
-import 'highlight.js/styles/lioshi.css';
-import PerfilImg from './assets/img/perfil.jpg';
-import useLocalStorage from './hooks/useLocalStorage.js';
+import 'highlight.js/styles/dracula.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Logo from './components/logo';
-import Main from './components/main';
-import Editar from './pages/editar';
-import Navbar from './components/navbar';
-import Perfil from './components/perfil';
-import Usuario from './components/usuario';
-import SeachBar from './components/search-bar';
-import TitleMenu from './components/title-menu';
-import MenuMobile from './components/menu-mobile';
-import MenuPrincipal from './components/menu-principal';
-import SearchBarMobile from './components/searchbar-mobile';
-import Home from './pages/home/index';
-import Projetos from './pages/projetos';
+import Logo from './components/Logo';
+import Main from './components/Main';
+import Editar from './pages/Editar';
+import Navbar from './components/Navbar';
+import Perfil from './components/Perfil';
+import Usuario from './components/Usuario';
+import SeachBar from './components/Search-bar';
+import TitleMenu from './components/Title-menu';
+import MenuMobile from './components/Menu-mobile';
+import MenuPrincipal from './components/Menu-principal';
+import SearchBarMobile from './components/Searchbar-mobile';
+import Home from './pages/Home/index';
+import Projetos from './pages/Projetos';
 import {
   handleColor,
-  handleHighlight,
-  handleState,
   handleLike,
-  apagarCard,
   exportar,
 } from './functions';
 hljs.registerLanguage('javascript', javascript);
@@ -39,9 +34,7 @@ hljs.registerLanguage('python', python);
 
 function App () {
 
-  const [nomeUsuario] = useState('Cesar Augusto');
   const [borderColor, setBorderColor] = useState('#6BD1FF');
-  const [projeto, setProjeto] = useLocalStorage('projeto', [])
 
   useEffect(() => {
     document.addEventListener('click', (event) => {
@@ -74,32 +67,25 @@ function App () {
         <Navbar>
           <Logo />
           <SeachBar />
-
           <div className="nav__icon-wrapper">
             <SearchBarMobile />
             <Perfil className="nav__perfil-container" >
               <Usuario className='nav__perfil-usuario' />
             </Perfil>
           </div>
-
-          <MenuMobile nomeUsuario={nomeUsuario} PerfilImg={PerfilImg} />
+          <MenuMobile />
         </Navbar>
-
         <Main className='main'>
-
           <div className='side__wrapper side__hidden'>
             <MenuPrincipal hljs={hljs ?? ''}>
               <TitleMenu text="MENU" />
             </MenuPrincipal>
           </div>
-
           <Switch>
             <Route path='/' exact children={
               <Home
                 defaultColor={borderColor}
                 optionBtn='salvar'
-                salvar={() => handleState(projeto, setProjeto)}
-                fnHighlight={() => handleHighlight(hljs)}
                 borderColor={borderColor}
                 color={() => handleColor(setBorderColor)}
                 exportar={() => exportar(DomToImage, saveAs)}
@@ -107,27 +93,19 @@ function App () {
             />
             <Route path="/projetos" children={
               <Projetos
-                nomeUsuario={nomeUsuario}
-                PerfilImg={PerfilImg}
-                projetos={projeto}
                 like={(event) => handleLike(event)}
-                apagar={event => apagarCard(event, projeto, setProjeto)}
               />}
             />
             <Route path='/editor/:id' children={
               <Editar
-                state={projeto}
-                setState={setProjeto}
                 defaultColor={borderColor}
                 optionBtn='editar'
-                fnHighlight={() => handleHighlight(hljs)}
                 borderColor={borderColor}
                 color={() => handleColor(setBorderColor)}
                 exportar={() => exportar(DomToImage, saveAs)}
               />}
             />
           </Switch>
-
         </Main>
       </Router>
     </>

@@ -9,14 +9,14 @@
 }
 
 .search-bar-mobile__img-menu-container{
-  background: url('../../assets/img/search.svg') no-repeat center;
+  background: url('assets/svg/search.svg') no-repeat center;
   width: 3rem;
   min-width: 3rem;
   height: 3rem;
 }
 
 .search-bar-mobile__is-active{
-  background: url('../../assets/img/menu-closed.svg') no-repeat center;
+  background: url('assets/svg/menu-closed.svg') no-repeat center;
   transition: ease-in-out 200ms;
 }
 

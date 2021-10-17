@@ -1,14 +1,14 @@
 .menu__botao-container{
   --menu__botao-size: 3rem;
-  display: flex;
   align-items: center;
-  margin-bottom: 1rem;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 1rem;
+  opacity: .6;
   padding: 0px;
   width: 100%;
-  cursor: pointer;
-  opacity: .6;
 }
 
 .menu__botao-texto{
