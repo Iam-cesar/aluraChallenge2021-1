@@ -6,7 +6,6 @@
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
-        "browserslist": "^4.17.4",
         "dom-to-image": "^2.6.0",
         "file-saver": "^2.0.5",
         "highlight.js": "^10.7.2",
