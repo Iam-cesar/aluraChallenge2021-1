@@ -18,7 +18,10 @@ const SearchBarMobile = () => {
   }
 
   return (
-    <div className='search-bar-mobile__container' onClick={() => { handleSeachBar(search, setSearch) }}>
+    <div
+      className='search-bar-mobile__container'
+      onClick={() => { handleSeachBar(search, setSearch) }}
+    >
       <div className='search-bar-mobile__img-menu-container'></div>
     </div>
   )

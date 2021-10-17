@@ -1,14 +1,26 @@
-import React from 'react';
+import { UserContext } from 'context/user';
+import React, { useContext, useEffect } from 'react';
 import './style.css';
+import PerfilImg from 'assets/img/perfil.jpg';
 
-const Usuario = ({ nomeUsuario, imgPerfil, className }) => {
+const Usuario = ({ className }) => {
+  const { userName, setUserName, userImage, setUserImage } = useContext(UserContext)
+
+  useEffect(() => {
+    setUserImage(PerfilImg)
+    setUserName('Cesar Augusto')
+  }, [setUserName, setUserImage])
+
   return (
     <div className={className}>
       <div className="nav__perfil-img-container">
-        <img className="nav__perfil-img" src={imgPerfil} alt="perfil do usuario" />
+        <img
+          className="nav__perfil-img"
+          src={userImage}
+          alt="perfil do usuario" />
       </div>
       <div className="nav__nome-usuario-container">
-        <span className="nav__nome-usuario">{nomeUsuario}</span>
+        <span className="nav__nome-usuario">{userName}</span>
       </div>
     </div>
   );
