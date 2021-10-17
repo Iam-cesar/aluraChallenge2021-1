@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
 import { useParams } from 'react-router-dom';
-import TextEditor from 'components/Text-editor';
-import MenuProjeto from 'components/Menu-projeto';
-import MenuPersonalizacao from 'components/Menu-personalizacao';
-import BotaoHighlight from 'components/Botao-highlight'
-import { useProjects } from 'hooks/useProjects';
+import TextEditor from '../../components/Text-editor';
+import MenuProjeto from '../../components/Menu-projeto';
+import MenuPersonalizacao from '../../components/Menu-personalizacao';
+import BotaoHighlight from '../../components/Botao-highlight'
+import { useProjects } from '../../hooks/useProjects';
 
 const Editar = ({ color, exportar, optionBtn, temas }) => {
 

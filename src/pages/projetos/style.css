@@ -55,7 +55,7 @@
 
 .projetos__delete {
     display: flex;
-    background: url('assets/svg/menu-closed.svg') no-repeat center;
+    background: url('../../assets/svg/menu-closed.svg') no-repeat center;
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer;

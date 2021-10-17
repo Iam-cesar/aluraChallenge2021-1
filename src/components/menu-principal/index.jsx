@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
-import Menu from 'components/Menu';
-import Img from 'components/Image';
+import Menu from '../../components/Menu';
+import Img from '../../components/Image';
 
 import { NavLink } from 'react-router-dom';
 
-import { ReactComponent as ImgCodeOff } from 'assets/svg/codeoff.svg';
-import { ReactComponent as ImgUsers } from 'assets/svg/users.svg';
+import { ReactComponent as ImgCodeOff } from '../../assets/svg/codeoff.svg';
+import { ReactComponent as ImgUsers } from '../../assets/svg/users.svg';
 
 const MenuPrincipal = ({ children, className }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import Button from 'components/Botao';
+import Button from '../../components/Botao';
 import hljs from 'highlight.js/lib/core';
 
 const BotaoHighlight = () => {

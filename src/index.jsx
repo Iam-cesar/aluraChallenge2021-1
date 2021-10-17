@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { UserProvider } from 'context/user';
-import { ProjectsProvider } from 'context/projects';
+import { UserProvider } from './context/user';
+import { ProjectsProvider } from './context/projects';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import useLocalStorage from 'hooks/useLocalStorage.js';
+import useLocalStorage from '../hooks/useLocalStorage.js';
 
 export const ProjectsContext = createContext()
 ProjectsContext.displayName = 'Projetos'

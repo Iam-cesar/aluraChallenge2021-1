@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
-import TextEditor from 'components/Text-editor';
-import MenuProjeto from 'components/Menu-projeto';
-import MenuPersonalizacao from 'components/Menu-personalizacao';
-import BotaoHighlight from 'components/Botao-highlight'
+import TextEditor from '../../components/Text-editor';
+import MenuProjeto from '../../components/Menu-projeto';
+import MenuPersonalizacao from '../../components/Menu-personalizacao';
+import BotaoHighlight from '../../components/Botao-highlight'
 
 const Editor = ({ color, borderColor, defaultColor, exportar, optionBtn }) => {
   return (
