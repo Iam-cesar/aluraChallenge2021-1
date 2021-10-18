@@ -1,36 +1,23 @@
 import React, { useContext } from 'react';
 import './style.css';
-import Menu from '../../components/Menu';
-import TitleMenu from '../../components/Title-menu';
-import Button from '../../components/Botao';
-import { Link } from 'react-router-dom';
-import { ProjectsContext } from '../../context/projects';
+import Menu from 'components/Menu';
+import TitleMenu from 'components/Title-menu';
+import Button from 'components/Botao';
+import { ProjectsContext } from 'context/projects';
+import ColorPicker from 'components/ColorPicker';
 
-const MenuPersonalizacao = ({ color, optionBtn, defaultColor }) => {
+const MenuPersonalizacao = ({ children }) => {
 
   const options = ['javascript', 'python', 'C', 'php'];
   const { projects, setProjects } = useContext(ProjectsContext)
 
-  const handleEditProject = (id) => {
-    let texto = document.querySelector('.text-editor')
-    let titulo = document.querySelector('.menu-projeto__input')
-    let descricao = document.querySelector('.menu-projeto__descricao')
-    let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
-    projects[id] = {
-      textValue: texto.innerText,
-      titulo: titulo.value,
-      descricao: descricao.value,
-      bgColor: colorPicker.value
-    }
-    setProjects(projects)
-  }
 
   const handleSaveProject = () => {
-    let texto = document.querySelector('.text-editor')
-    let titulo = document.querySelector('.menu-projeto__input')
-    let descricao = document.querySelector('.menu-projeto__descricao')
-    let colorPicker = document.querySelector('.menu-personalizacao__color-picker')
-    let botaoSalvar = document.querySelector('.menu-personalizacao__botao-salvar')
+    const texto = document.querySelector('.text-editor')
+    const titulo = document.querySelector('.menu-projeto__input')
+    const descricao = document.querySelector('.menu-projeto__descricao')
+    const colorPicker = document.querySelector('.menu-personalizacao__color-picker')
+    const botaoSalvar = document.querySelector('.menu-personalizacao__botao-salvar')
 
     if (texto.innerText !== '' && titulo.value !== '' && descricao.value !== '') {
       setProjects([{
@@ -53,21 +40,6 @@ const MenuPersonalizacao = ({ color, optionBtn, defaultColor }) => {
     }, 2000)
   }
 
-  const optionButton = {
-    'salvar':
-      <Button
-        className='menu-personalizacao__botao-salvar' >
-        <span onClick={handleSaveProject}        >
-        </span>
-      </Button>,
-    'editar':
-      <Link to='/projetos'>
-        <Button className='menu-personalizacao__botao-salvar' >
-          <span onClick={e => handleEditProject(e.target.id)}></span>
-        </Button>
-      </Link>,
-  }
-
   return (
     <Menu className='menu-personalizacao__container'>
       <TitleMenu
@@ -87,15 +59,15 @@ const MenuPersonalizacao = ({ color, optionBtn, defaultColor }) => {
           })}
         </select>
 
-        <div className='menu-personalizacao__color-picker-container'>
-          <input
-            type='color'
-            className='menu-personalizacao__color-picker'
-            defaultValue={defaultColor}
-            onClick={() => color()} />
-        </div>
+        <ColorPicker />
       </div>
-      {optionButton[optionBtn]}
+      {children
+        ? children
+        : <Button
+          className='menu-personalizacao__botao-salvar' >
+          <span onClick={handleSaveProject}        >
+          </span>
+        </Button>}
     </Menu>
   );
 };

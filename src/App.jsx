@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
-import DomToImage from 'dom-to-image';
-import { saveAs } from 'file-saver';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import php from 'highlight.js/lib/languages/php';
@@ -22,19 +20,12 @@ import MenuPrincipal from 'components/Menu-principal';
 import SearchBarMobile from 'components/Searchbar-mobile';
 import Home from 'pages/Home/index';
 import Projetos from 'pages/Projetos'
-import {
-  handleColor,
-  handleLike,
-  exportar,
-} from './functions';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('php', php);
 hljs.registerLanguage('c', c);
 hljs.registerLanguage('python', python);
 
 function App () {
-
-  const [borderColor, setBorderColor] = useState('#6BD1FF');
 
   useEffect(() => {
     document.addEventListener('click', (event) => {
@@ -81,27 +72,18 @@ function App () {
           </MenuPrincipal>
         </div>
         <Switch>
-          <Route path='/' exact children={
-            <Home
-              defaultColor={borderColor}
-              optionBtn='salvar'
-              borderColor={borderColor}
-              color={() => handleColor(setBorderColor)}
-              exportar={() => exportar(DomToImage, saveAs)}
-            />}
+          <Route
+            path='/'
+            exact
+            children={<Home optionBtn='salvar' />}
           />
-          <Route path="/projetos" children={
-            <Projetos
-              like={(event) => handleLike(event)}
-            />}
+          <Route
+            path="/projetos"
+            children={<Projetos />}
           />
-          <Route path='/editor/:id' children={
-            <Editar
-              defaultColor={borderColor}
-              optionBtn='editar'
-              borderColor={borderColor}
-              color={() => handleColor(setBorderColor)}
-              exportar={() => exportar(DomToImage, saveAs)}
+          <Route
+            path='/editor/:id'
+            children={<Editar optionBtn='editar'
             />}
           />
         </Switch>
