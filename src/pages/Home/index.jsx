@@ -1,37 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.css';
-import TextEditor from '../../components/Text-editor';
-import MenuProjeto from '../../components/Menu-projeto';
-import MenuPersonalizacao from '../../components/Menu-personalizacao';
-import BotaoHighlight from '../../components/Botao-highlight'
+import TextEditor from 'components/Text-editor';
+import MenuProjeto from 'components/Menu-projeto';
+import MenuPersonalizacao from 'components/Menu-personalizacao';
+import BotaoHighlight from 'components/Botao-highlight'
+import DomToImage from 'components/CodeToImage';
+import useColorPick from 'hooks/useColorPicker';
 
-const Editor = ({ color, borderColor, defaultColor, exportar, optionBtn }) => {
+const Editor = () => {
+  const { color, setColor } = useColorPick()
+
+  useEffect(() => {
+    setColor(color)
+  }, [color, setColor])
+
   return (
     <>
       <div className='main__wrapper'>
-        <TextEditor bgColor={borderColor}>
-          <div className="text-editor__exportar">
-            <select
-              className="text-editor__formatos-exportar"
-              name="formatos"
-              id="formatos">
-              <option value="jpg">JPG</option>
-              <option value="png">PNG</option>
-              <option value="svg">SVG</option>
-            </select>
-            <button
-              onClick={() => exportar()}
-              className="text-editor__botao-exportar"
-            >Exportar</button>
-          </div>
+        <TextEditor bgColor={color}>
+          <DomToImage />
         </TextEditor >
         <BotaoHighlight />
       </div>
       <div className='side__wrapper'>
         <MenuProjeto />
         <MenuPersonalizacao
-          optionBtn={optionBtn}
-          defaultColor={defaultColor}
+          defaultColor={color}
           color={color} />
       </div>
     </>

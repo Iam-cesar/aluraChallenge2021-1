@@ -1,7 +1,7 @@
-import { UserContext } from '../../context/user';
+import { UserContext } from 'context/user';
 import React, { useContext, useEffect } from 'react';
 import './style.css';
-import PerfilImg from '../../assets/img/perfil.jpg';
+import PerfilImg from 'assets/img/perfil.jpg';
 
 const Usuario = ({ className }) => {
   const { userName, setUserName, userImage, setUserImage } = useContext(UserContext)

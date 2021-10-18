@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import hljs from 'highlight.js/lib/core.js';
-import SocialMedia from '../../components/Social-media';
-import TextEditor from '../../components/Text-editor';
-import { useProjects } from '../../hooks/useProjects';
+import SocialMedia from 'components/Social-media';
+import TextEditor from 'components/Text-editor';
+import { useProjects } from 'hooks/useProjects';
 
-const Projetos = ({ like }) => {
+const Projetos = () => {
 
   const { projects, setProjects } = useProjects()
 
@@ -47,12 +47,10 @@ const Projetos = ({ like }) => {
                 <p className='projetos__descricao'>{item.descricao ?? ''}</p>
                 <SocialMedia
                   id={index}
-                  like={id => like(id)}
                 />
               </div>
             </div>
           );
-
         })
       }</div>
   )
